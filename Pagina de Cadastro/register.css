@@ -20,12 +20,20 @@ section{
 	display: flex;
 }
 
-form /*Button*/{ 
+section div{
+	width: 100%;
+	text-align: center;
+}
+
+form {/*placement of inputs*/
 	width: 480px; 
-	margin: auto;
+	/*margin: auto;*/
 	padding: 5px; 
 	border: none;
-	/*border: solid black 1px;	*/
+	/*border: solid black 1px;*/
 	border-radius: 5px;  
-	box-shadow: 5px 5px 2px #888;
+	/*box-shadow: 5px 5px 2px #888;*/
 }
+
+
+
