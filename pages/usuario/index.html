@@ -11,7 +11,6 @@
 </head>
 <body>
     <div>
-
         <div class="row header">
             <div class="col-5">
                 <a href="#home" id="title">VENDAS NOW</a>
@@ -21,65 +20,116 @@
             </div>
         </div>
 
-        <div class="row container">
+        <div class="container">
             <div id="conteudo">
-                <h1>Menu lateral em CSS</h1>     
+                <div class="container-header">
+                    <h5><b>Lista de Usuários</b></h5>
+                </div>
+
+                <label>Os usuários relacionados representam todos os cadastros do sistema</label>       
                 
-                <table class="table" style="width:100%; border: 1px solid black">
+                <table class="table">
                     <tr>
                         <th>Nome</th>
                         <th>Função</th>
                         <th>Código</th>
                         <th>Email</th>
+                        <th>Ações</th>
                     </tr>
                     <tr>
                         <td>Usuário 1</td>
                         <td>Admin</td>
                         <td>001</td>
                         <td>admin@vendasnow.com</td>
+                        <td>
+                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>
+                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
+                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>
+                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Usuário 2</td>
                         <td>Gerente de Vendas</td>
                         <td>002</td>
                         <td>gerente@vendasnow.com</td>
+                        <td>
+                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>
+                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
+                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>
+                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Usuário 3</td>
                         <td>Vendedor</td>
                         <td>003</td>
                         <td>vendedor@vendasnow.com</td>
+                        <td>
+                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar"/></a>
+                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar"/></a>
+                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar"/></a>
+                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
+                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir"/></a>
+                        </td>
                     </tr>
                 </table>
-
-
-             </div>
-
-
+            </div>
 
             <div id="lateral">
                 <div id="menu">
-                    <h4 class="link-titulo">Usuário: ADMIN</h4>
-
-                    <h3 class="link-titulo">Home</h3><br/>                
-                    <h3 class="link-titulo">Usuário</h3>
+                    <div id="usuario-status">
+                        <h4 class="link-titulo">Usuário: Admin</h4>
+                    </div>
+                    <h3 class="link-titulo">
+                        <a href="../../imagens/icones/image 9.png" rel="lightbox" title="Imagem 6">
+                            <img src="../../imagens/icones/image 9.png" width="30" height="30" alt="" title="Home"/></a>
+                        Home
+                    </h3><br/>                
+                    <h3 class="link-titulo">
+                        <a href="../../imagens/icones/image 10.png" rel="lightbox" title="Imagem 6">
+                            <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
+                        Usuário
+                    </h3>
                     <ul class="box">
                         <li><a href="#">Lista de Usuários</a></li>
                     </ul>                
-                    <h3 class="link-titulo">Vendas</h3>
+                    <h3 class="link-titulo">
+                        <a href="../../imagens/icones/image 11.png" rel="lightbox" title="Imagem 6">
+                            <img src="../../imagens/icones/image 11.png" width="30" height="30" alt="" title="Usuario"/></a>
+                        Vendas
+                    </h3>
                     <ul class="box">					
                         <li><a href="#">Lista de Vendas</a></li> 			
                         <li><a href="#">Cadastro de Vendas</a></li> 			
-                    </ul>
-                    
-                    <h3 class="link-titulo">Estoque</h3>
+                    </ul>                    
+                    <h3 class="link-titulo">
+                        <a href="../../imagens/icones/image 12.png" rel="lightbox" title="Imagem 6">
+                            <img src="../../imagens/icones/image 12.png" width="30" height="30" alt="" title="Usuario"/></a>
+                        Estoque
+                    </h3>
                     <ul class="box">
                         <li><a href="#">Lista de Estoque</a></li>
                         <li><a href="#">Cadastro de Produtos</a></li>
-                    </ul>                
+                    </ul>   
+                    <h3 class="link-titulo">
+                        <a href="../../imagens/icones/image 13.png" rel="lightbox" title="Imagem 6">
+                            <img src="../../imagens/icones/image 13.png" width="30" height="30" alt="" title="Usuario"/></a>
+                        Meu Perfil
+                    </h3>             
                 </div> 
             </div>
-
 
         </div>
  
@@ -95,8 +145,6 @@
                 <h4>Suporte</h4>
             </div>
         </div>
-
 </div>
-
 </body>
 </html>
