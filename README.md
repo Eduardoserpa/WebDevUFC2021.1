@@ -17,6 +17,7 @@ Eduardo Serpa:
 - Menu Vendedor
 
 Pedro Brito:
-- 
-- 
-- 
+- Editar Usuário
+- Nova venda
+- Editar produto
+- Adicionar novo produto
