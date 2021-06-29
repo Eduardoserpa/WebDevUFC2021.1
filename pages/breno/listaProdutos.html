@@ -18,74 +18,122 @@
             <div class="col-5">
                 <a href="#home" style="color:white;">Sobre a Loja</a>
             </div>
+            <div class="col-1">
+                <button class="button-header">Entrar</button>
+            </div>
         </div>
 
         <div class="container">
             <div id="conteudo">
                 <div class="container-header">
-                    <h5><b>Lista de Usuários</b></h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5><b>Estoque - Lista de Produtos</b></h5>
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-secondary">
+                                <img src="../../imagens/icones/plus-solid.svg" width="20" height="20" alt=""/>
+                                Novo Produto
+                            </button>
+                        </div>
+                    </div>
+
+
+
                 </div>
+
                 <div class="container-descricao">
-                    <label>Os usuários relacionados representam todos os cadastros do sistema</label>       
+                    <label>Os produtos relacionados representam o estoque no sistema</label>       
+                </div>
+
+                <div class="container-filtro">
+                    <form>
+                        <div class="row form-group">
+
+                            <div class="item-group">
+                                <div class="col-6">
+                                    <label for="produto" class="form-label">Produto</label>
+                                    <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o código ou o nome do produto">                                
+                                
+                                </div>
+                            </div>
+                            <div class="item-group">
+                                <div class="col-6">
+                                    <label for="categoria" class="form-label">Categoria do Produto</label>
+                                    <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Digite o nome da categoria">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row form-btn">
+                            <button type="submit" class="btn btn-secondary" id="consultar-btn">
+                                <img src="../../imagens/icones/search-solid.svg" width="20" height="20" alt=""/>
+                                Consultar
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
                 
                 <table class="table">
                     <tr>
-                        <th>Nome</th>
-                        <th>Função</th>
-                        <th>Código</th>
-                        <th>Email</th>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Quantidade em Estoque</th>
+                        <th>Valor (Unidade)</th>
+                        <th>Valor (Total)</th>
                         <th>Ações</th>
                     </tr>
                     <tr>
-                        <td>Usuário 1</td>
-                        <td>Admin</td>
-                        <td>001</td>
-                        <td>admin@vendasnow.com</td>
+                        <td>314 - Produto 01</td>
+                        <td>Categoria 01</td>
+                        <td>300</td>
+                        <td>R$ 20,00</td>
+                        <td>R$ 6000,00</td>
                         <td>
-                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>
                             <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
                             <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>
-                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>Usuário 2</td>
-                        <td>Gerente de Vendas</td>
-                        <td>002</td>
-                        <td>gerente@vendasnow.com</td>
+                        <td>615 - Produto 02</td>
+                        <td>Categoria 01</td>
+                        <td>400</td>
+                        <td>R$ 25,00</td>
+                        <td>R$ 10000,00</td>
                         <td>
-                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>
                             <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
                             <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>
-                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>Usuário 3</td>
-                        <td>Vendedor</td>
-                        <td>003</td>
-                        <td>vendedor@vendasnow.com</td>
+                        <td>103 - Produto 03</td>
+                        <td>Categoria 02</td>
+                        <td>500</td>
+                        <td>R$ 15,00</td>
+                        <td>R$ 7500,00</td>
                         <td>
-                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar"/></a>
                             <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar"/></a>
+                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
                             <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar"/></a>
-                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir"/></a>
+                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
                         </td>
+                    </tr>
+                    <tr class="table-totais">
+                        <td>Total Estoque</td>
+                        <td> 02</td>
+                        <td>1200</td>
+                        <td></td>
+                        <td>R$ 23500,00</td>
+                        <td></td>
                     </tr>
                 </table>
+
                 <div class="pagination">
                     <ul class="pagination" >
                         <li><a href="#">«</a></li>
