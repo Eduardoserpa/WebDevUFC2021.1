@@ -1,0 +1,296 @@
+body{
+    background-color: rgb(250, 250, 250);
+    margin-top: 100px;
+}
+.caixas{
+    font: normal 12pt Arial;
+    color:white;
+    text-align: justify;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top:100px;
+    margin: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+.caixas-login{
+    font: normal 12pt Arial;
+    color:black;
+    text-align: justify;
+    border-radius: 10px;
+    margin: 10px;
+    padding-top: 70px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.item-group{
+    padding: 5px;
+}
+.caixas-avisos{
+    background-color: #555555;
+    font: normal 12pt Arial;
+    color:white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 40px;
+    margin-top: 100px;
+    height: 210px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+h6{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+h5{
+    color:black;
+    display: block;
+    align-items: left;
+    justify-content: left;
+    padding-bottom:15px;
+}
+.line{
+    margin-top:5px; 
+    border-top: 3px solid #555555;
+}
+.item-center{
+    font: normal 27pt Arial;
+}
+.title-container{
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.header{
+    background-color: rgb(0, 0, 0);
+    font: normal 15pt Arial;
+    color: white;
+    padding-left: 60px;
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+}
+#title{
+    font: normal 22pt Arial;
+    color: white;
+}
+.button-header {
+    background-color: #555555;
+    border-radius: 6px;
+    color:white;
+    padding: 5px;
+    width: 80px;
+    font: normal 11pt Arial;
+
+}
+
+.vendas_now{
+    width: 100px;
+}
+
+a{
+    color:white;
+    margin-right: 15px;
+}
+a:hover{
+    color: rgb(218, 208, 208);
+    text-decoration: underline red;
+}
+a:link {
+    text-decoration:none;
+}
+a:visited {
+    text-decoration:none;
+}
+#caixa_mensagem{
+    height: 110px;
+    width: 280px;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto; 
+    display: inline-block;
+}
+.produto{
+    padding: 15px;
+    margin:auto;
+}
+.produto li {
+    float: left;
+}
+.produto ul {
+    overflow: auto; 
+}
+
+.table{
+
+}
+
+
+
+#conteudo {
+    width: 70%;
+    text-align: center;
+    margin-left: 300px;
+    padding: 20px;
+}
+#menu-lateral {
+    width: 30%;
+    margin: 0; padding: 0;
+    float: left;
+}
+#menu-lateral ul li {
+    margin: 0; padding: 0px;
+    border-bottom: 1px solid #CCC;
+    text-align: left;
+    list-style-type: none;
+}
+#menu-lateral a:link {
+    background: #F5F5F5;
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+    }
+#menu-lateral a:hover {
+    background: #E5F0FF;
+    color: #039;
+}
+
+/* =CSS Reset */
+/* https://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+*, html, body {
+	margin:0;
+	padding:0;
+	}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.cf:before,
+.cf:after {content: " ";display: table;}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+body {
+	margin-left:55px; 
+	font:  62.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+}
+
+.container{
+    height:100%;
+    font:  78.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+    margin-top:100px;
+}
+#lateral {
+    padding: 0 0 20px 20px;
+    /* -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+                transition: all 0.5s ease; */
+                
+    font-size:1.2em;
+    background:rgb(44,62,80);
+    height:100%;
+    /* overflow:hidden; */
+    width:300px; 
+    position:fixed;
+    top:0;
+    margin-top: 60px;
+    /* left:-320px; */
+}
+
+/* #lateral:before {
+    z-index:1000;
+    content: url(icone-menu.png);
+    font-size:4em;
+    color:white;
+    position:fixed;
+    left:4px;
+    top:45px;
+}
+#lateral:hover:before, #lateral:focus:before {
+left:-500px
+    }
+#lateral:hover, #lateral:focus,  #lateral:active  {
+    overflow-y:scroll;
+    -moz-transform: translate(320px, 0);
+        -webkit-transform: translate(320px, 0);
+            -o-transform: translate(320px, 0);
+                transform: translate(320px, 0);
+    padding-right:0;
+} */
+
+
+#lateral .box {
+    list-style-type:none;
+    margin-bottom:1em;;
+    padding-bottom:1em;
+}
+#lateral h3 {
+    display:inline-block;
+    font-weight:bold;
+    font-size:1.0em;
+    font-style:normal;
+    padding-bottom:0.2em;
+    margin: 0.5em 0 0.5em 0.81em;
+    color:rgb(255,255,255);
+    border-bottom: 4px solid rgb(155,155,155);
+}
+#lateral h4 {
+    font-weight: normal;
+    font-size:1.0em;
+    font-style:normal;
+    padding-bottom:0.8em;
+    margin: 1em 0 1em 0.81em;
+    color:rgb(255,255,255);
+}
+#menu {
+    font-style:italic;
+    position:relative;
+    font-size:1.0em;
+    margin:1em 0 1em -1em;
+    padding:0;
+}
+#menu li {
+    padding:0; 
+    margin:0;
+}
+#menu li a,  #menu li a:link {
+    font-size:1.0em;
+    color:rgb(255,255,255);
+    text-decoration: none;
+    padding: 0.2em 0 0.2em 0.4em;
+    display: block;
+    -moz-transition: all 1.2s ease;
+            -webkit-transition: all 1.2s ease;
+                -o-transition: all 1.2s ease;
+                    transition: all 1.2s ease;
+}
+#menu li a:hover {
+    color:rgb(255,255,255);
+    background-color:rgba(255,255,255,0.2);
+    -moz-transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+}
+
+     
