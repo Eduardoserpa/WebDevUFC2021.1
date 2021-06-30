@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../style.css">
-
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <title>Vendas Now</title>
 </head>
 <body>
@@ -28,23 +26,20 @@
                 <div class="container-header">
                     <div class="row">
                         <div class="col-6">
-                            <h5><b>Estoque - Lista de Produtos</b></h5>
+                            <h5><b>Lista de Vendas</b></h5>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-2">
                             <button type="submit" class="btn btn-secondary">
                                 <img src="../../imagens/icones/plus-solid.svg" width="20" height="20" alt=""/>
-                                Novo Produto
+                                Nova Venda
                             </button>
                         </div>
                     </div>
-
-
-
                 </div>
 
                 <div class="container-descricao">
-                    <label>Os produtos relacionados representam o estoque no sistema</label>       
+                    <label>As vendas relacionadas representam todas as vendas realizadas no sistema</label>       
                 </div>
 
                 <div class="container-filtro">
@@ -55,15 +50,32 @@
                                 <div class="row">
                                     <div class="col-5">
                                         <label for="produto" class="form-label">Produto</label>
-                                        <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o código ou o nome do produto">
+                                        <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o código ou o nome do produto">                                
                                     </div>
                                     <div class="col-10"></div>
                                     <div class="col-5">
-                                        <label for="categoria" class="form-label">Categoria do Produto</label>
-                                        <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Digite o nome da categoria">
+                                        <label for="vendedor" class="form-label">Vendedor</label>
+                                        <input type="text" class="form-control" id="vendedor" name="vendedor" placeholder="Digite o código ou o nome do vendedor">
                                     </div>
                                 </div>
                             </div>
+                            <div class="item-group">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <label for="venda" class="form-label">Código da venda</label>
+                                        <input type="text" class="form-control" id="venda" name="venda" placeholder="Digite o código da venda">
+                                    </div>
+                                    <div class="col-10"></div>
+                                    <div class="col-5">
+                                        <label for="data-inicio" class="form-label">Data (Período)</label><br/>
+                                        <div>
+                                            <label>De </label> <input type="date" id="data-inicio" name="data-inicio" class="datetime">
+                                            <label> Até </label> <input type="date" id="data-Fim" name="data-fim" class="datetime">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="row form-btn">
                             <button type="submit" class="btn btn-secondary" id="consultar-btn">
@@ -77,19 +89,17 @@
                 
                 <table class="table">
                     <tr>
-                        <th>Produto</th>
-                        <th>Categoria</th>
-                        <th>Quantidade em Estoque</th>
-                        <th>Valor (Unidade)</th>
-                        <th>Valor (Total)</th>
+                        <th>Data</th>
+                        <th>Cód Venda</th>
+                        <th>Vendedor</th>
+                        <th>Valor da Venda</th>
                         <th>Ações</th>
                     </tr>
                     <tr>
-                        <td>314 - Produto 01</td>
-                        <td>Categoria 01</td>
-                        <td>300</td>
-                        <td>R$ 20,00</td>
-                        <td>R$ 6000,00</td>
+                        <td>25/02/2021</td>
+                        <td>1342</td>
+                        <td>003 - Vendedor 01</td>
+                        <td>R$ 400,00</td>
                         <td>
                             <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
@@ -98,11 +108,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>615 - Produto 02</td>
-                        <td>Categoria 01</td>
-                        <td>400</td>
-                        <td>R$ 25,00</td>
-                        <td>R$ 10000,00</td>
+                        <td>26/02/2021</td>
+                        <td>1343</td>
+                        <td>004 - Vendedor 02</td>
+                        <td>R$ 500,00</td>
                         <td>
                             <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
@@ -111,11 +120,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>103 - Produto 03</td>
-                        <td>Categoria 02</td>
-                        <td>500</td>
-                        <td>R$ 15,00</td>
-                        <td>R$ 7500,00</td>
+                        <td>26/02/2021</td>
+                        <td>1344</td>
+                        <td>004 - Vendedor 02</td>
+                        <td>R$ 600,00</td>
                         <td>
                             <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
@@ -124,11 +132,10 @@
                         </td>
                     </tr>
                     <tr class="table-totais">
-                        <td>Total Estoque</td>
-                        <td> 02</td>
-                        <td>1200</td>
+                        <td>Total Vendas</td>
                         <td></td>
-                        <td>R$ 23500,00</td>
+                        <td></td>
+                        <td>R$ 1500,00</td>
                         <td></td>
                     </tr>
                 </table>
@@ -197,14 +204,13 @@
         </div>
         <div class="row"> 
             <div class="col-4">
-
             </div>
             <div class="col-2">
                 <h4>Contato</h4>
             </div>
             <div class="col-2">
                 <h4>Suporte</h4>
-            </div>
+            </div>  
             <div class="col-4"></div>
         </div>
 </div>
