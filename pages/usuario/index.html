@@ -7,6 +7,57 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Vendas Now</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            var uri = 'http://localhost:3000/user/';
+
+            fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
+            .then(response => response.text())
+            .then(result => {
+                criarTabela(result);
+            })
+            .catch(error => console.log('error', error));   
+        });
+
+        function criarTabela(data){
+            var container = $('#my-container'),
+            table = $('<table>').addClass('table');
+            var tr_head = $('<tr>');
+            tr_head.append('<th>' + 'Nome' + '</th>');
+            tr_head.append('<th>' + 'Função' + '</th>');
+            tr_head.append('<th>' + 'Código' + '</th>');
+            tr_head.append('<th>' + 'Email' + '</th>');
+            tr_head.append('<th>' + 'Ações' + '</th>');
+            table.append(tr_head);
+
+            var array = JSON.parse(data);
+            array.forEach(function(user) {
+                var tr = $('<tr>');
+                [ 'nome', 'tipo', '_id', 'email'].forEach(function(attr) {
+                    tr.append('<td>' + user[attr] + '</td>');
+                });
+                tr.append(
+                    '<td>' + 
+                        '<a rel="lightbox" title="Imagem 6">' +
+                            '<img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>' +
+                        '<a rel="lightbox" title="Imagem 6">' +
+                            '<img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>' +
+                        '<a rel="lightbox" title="Imagem 6">' +
+                            '<img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>' +
+                        '<a rel="lightbox" title="Imagem 6">' +
+                            '<img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>' + 
+                    '</td>'
+                );      
+                table.append(tr);
+            });
+
+            container.append(table);
+        }
+    
+    </script>
 </head>
 <body>
     <div>
@@ -74,64 +125,10 @@
                 <div class="container-descricao">
                     <label>Os usuários relacionados representam todos os cadastros do sistema</label>       
                 </div>
+
+                <div id="my-container">
+                </div>
                 
-                <table class="table">
-                    <tr>
-                        <th>Nome</th>
-                        <th>Função</th>
-                        <th>Código</th>
-                        <th>Email</th>
-                        <th>Ações</th>
-                    </tr>
-                    <tr>
-                        <td>Usuário 1</td>
-                        <td>Admin</td>
-                        <td>001</td>
-                        <td>admin@vendasnow.com</td>
-                        <td>
-                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>
-                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
-                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>
-                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Usuário 2</td>
-                        <td>Gerente de Vendas</td>
-                        <td>002</td>
-                        <td>gerente@vendasnow.com</td>
-                        <td>
-                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>
-                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
-                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>
-                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Usuário 3</td>
-                        <td>Vendedor</td>
-                        <td>003</td>
-                        <td>vendedor@vendasnow.com</td>
-                        <td>
-                            <a href="../../imagens/icones/user-friends-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar"/></a>
-                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar"/></a>
-                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar"/></a>
-                            <a href="../../imagens/icones/trash-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir"/></a>
-                        </td>
-                    </tr>
-                </table>
                 <div class="pagination">
                     <ul class="pagination" >
                         <li><a href="#">«</a></li>
@@ -143,8 +140,6 @@
                     </ul>
                 </div>
             </div>
-
-
 
         </div>
         <hr class="line" />
