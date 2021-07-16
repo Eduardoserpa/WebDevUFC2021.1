@@ -68,6 +68,9 @@ h6{
 #title-desc{
     color: white;
 }
+.main{
+    padding: 20px;
+}
 .header{
     background-color: rgb(0, 0, 0);
     font: normal 15pt Arial;
@@ -77,7 +80,7 @@ h6{
     position: fixed;
     top: 0;
     left: 0;
-    height: 45px;
+    /* height: 45px; */
     width: 100%;
 }
 #title{
