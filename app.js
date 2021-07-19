@@ -1,14 +1,17 @@
-const express = require('express')
-const port = 3003
-const path = require('path')
-const createError = require('http-errors')
-
-const app = express()
+const express = require('express');
+const port = 3003;
+const path = require('path');
+const createError = require('http-errors');
+const cookieParser = require('cookie-parser');
+const app = express();
 
 app.use(express.static(path.join(__dirname,'public')))
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine','ejs')
+
+app.use(cookieParser());
+
 
 //Load routes
 //General routes
