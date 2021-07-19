@@ -70,6 +70,7 @@ h6{
 }
 .main{
     padding: 20px;
+    margin: 40px;
 }
 .header{
     background-color: rgb(0, 0, 0);
@@ -220,6 +221,16 @@ ul.pagination li a.active {
     padding-bottom: 25px;
     box-shadow: 0 0 10px #ccc;  
 }
+.container-inicial-principal{
+    height:100%;
+    font:  78.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+    margin-top:80px;
+    padding-bottom: 25px;
+    box-shadow: 0 0 10px #ccc;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 
 .container{
     margin-right: auto;
