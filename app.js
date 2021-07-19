@@ -3,6 +3,7 @@ const port = 3003;
 const path = require('path');
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
+//const expressLayouts = require('express-ejs-layouts'); 
 const app = express();
 
 app.use(express.static(path.join(__dirname,'public')))
@@ -12,6 +13,7 @@ app.set('view engine','ejs')
 
 app.use(cookieParser());
 
+//app.use(expressLayouts) 
 
 //Load routes
 //General routes
