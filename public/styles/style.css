@@ -627,6 +627,7 @@ label {
 
 
   .gn-menu-wrapper {
+      margin-top: 20px;
     position: fixed;
     top: 58px;
     bottom: 0;
