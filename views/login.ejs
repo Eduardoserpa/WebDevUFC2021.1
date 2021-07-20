@@ -9,9 +9,7 @@
     <title>Vendas Now</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <script>
-
         function postLogin(email, senha) {
             var uri = `http://localhost:3000/login/`;
             var req = new XMLHttpRequest();
@@ -37,7 +35,7 @@
 <body>
     <div class="row header">
         <div class="col-5">
-            <a href="#home" id="title">VENDAS NOW</a>
+            <a onclick="location.href='/'" id="title">VENDAS NOW</a>
         </div>
         <div class="col-5">
             <a href="#home" id="title-desc">Sobre a Loja</a>
@@ -56,7 +54,6 @@
                                 <div class="item-group">
                                     <label for="email">Usuário</label>
                                     <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter user">
-                                    <!-- <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu e-mail com mais ninguém.</small> -->
                                 </div>
                                 <div class="item-group">
                                     <label for="senha">Senha</label>
@@ -85,7 +82,6 @@
                 </div>
             </div>
         </div>
-
         <hr class="line" />
         <div>
             <h6>Projeto desenvolvido pela equipe Azul na disciplina de Desenvolvimento Web - UFC</h6>
@@ -102,8 +98,6 @@
             </div>
             <div class="col-4"></div>
         </div>
-
-
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">          
@@ -125,7 +119,6 @@
                 </div>            
             </div>
         </div>
-
-</div>
+    </div>
 </body>
 </html>
