@@ -13,7 +13,7 @@ app.set('view engine','ejs')
 
 app.use(cookieParser());
 
-app.use(expressLayouts) 
+app.use(expressLayouts); 
 
 //Load routes
 //General routes
