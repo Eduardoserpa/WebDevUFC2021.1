@@ -1,6 +1,7 @@
 const botaoCss = document.getElementById("altcss");
 const cookieValue = JSON.parse(localStorage.getItem('modeCss'));
 
+document.cookie = 'user=admin'
 
 if(cookieValue === null || cookieValue === 'ligth'){
   changeCSS('styles/style.css', 0);
