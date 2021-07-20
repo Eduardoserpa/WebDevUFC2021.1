@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-ligth.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Vendas Now</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,15 +22,19 @@
                             <a href="../../imagens/icones/image 9.png" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 9.png" width="30" height="30" alt="" title="Home"/></a>
                             Home
-                        </h3><br/>                
+                        </h3><br/>
+                        
+                        <% if(user==='admin'){  %>    
                         <h3 class="link-titulo">
+                            
                             <a href="../../imagens/icones/image 10.png" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
                             Usuário
                         </h3>
                         <ul class="box">
                             <li><a href="#">Lista de Usuários</a></li>
-                        </ul>                
+                        </ul>    
+                        <%} %>             
                         <h3 class="link-titulo">
                             <a href="../../imagens/icones/image 11.png" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 11.png" width="30" height="30" alt="" title="Usuario"/></a>
@@ -106,9 +110,13 @@
             <div class="col-2">
                 <h4>Suporte</h4>
             </div>
+            <div class="col-5">
+                <input id = "altcss" type="button" value="DARK MODE">
+            </div>
             <div class="col-4"></div>
         </div>
 </div>
 </body>
 <script type="text/javascript" src='scripts/user/menu-user.js'></script>
+<script type="text/javascript" src='scripts/alt-css.js'></script>
 </html>

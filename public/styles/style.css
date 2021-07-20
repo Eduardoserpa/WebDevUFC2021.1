@@ -441,6 +441,16 @@ th {
     flex: 0 0 41.666667%;
     max-width: 41.666667%;
 }
+#altcss {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+    margin-left: 3%;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+}
 .col-4 {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
