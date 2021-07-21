@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Vendas Now</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div>
@@ -93,7 +94,6 @@
                 <div class="container-filtro">
                     <form>
                         <div class="row form-group">
-
                             <div class="item-group">
                                 <div class="row">
                                     <div class="col-5">
@@ -108,73 +108,29 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row form-btn">
                             <button type="submit" class="btn btn-secondary" id="consultar-btn">
                                 <img src="../../imagens/icones/search-solid.svg" width="20" height="20" alt=""/>
                                 Consultar
                             </button>
                         </div>
-
                     </form>
                 </div>
+
+                <div id="my-container">
+                </div>
                 
-                <table class="table">
-                    <tr>
-                        <th>Produto</th>
-                        <th>Categoria</th>
-                        <th>Quantidade em Estoque</th>
-                        <th>Valor (Unidade)</th>
-                        <th>Valor (Total)</th>
-                        <th>Ações</th>
-                    </tr>
-                    <tr>
-                        <td>314 - Produto 01</td>
-                        <td>Categoria 01</td>
-                        <td>300</td>
-                        <td>R$ 20,00</td>
-                        <td>R$ 6000,00</td>
-                        <td>
-                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
-                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>615 - Produto 02</td>
-                        <td>Categoria 01</td>
-                        <td>400</td>
-                        <td>R$ 25,00</td>
-                        <td>R$ 10000,00</td>
-                        <td>
-                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
-                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>103 - Produto 03</td>
-                        <td>Categoria 02</td>
-                        <td>500</td>
-                        <td>R$ 15,00</td>
-                        <td>R$ 7500,00</td>
-                        <td>
-                            <a href="../../imagens/icones/edit-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>
-                            <a href="../../imagens/icones/list-solid.svg" rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>
-                        </td>
-                    </tr>
-                    <tr class="table-totais">
-                        <td>Total Estoque</td>
-                        <td></td>
-                        <td>1200</td>
-                        <td></td>
-                        <td>R$ 23500,00</td>
-                        <td></td>
-                    </tr>
-                </table>
+                <div class="pagination">
+                    <ul class="pagination" >
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a class="active" href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
 
                 <div class="pagination">
                     <ul class="pagination" >
@@ -207,6 +163,9 @@
             </div>
             <div class="col-4"></div>
         </div>
-</div>
+    </div>
 </body>
+
+<script type="text/javascript" src='scripts/product/list-product.js'></script>
+<script type="text/javascript" src='scripts/alt-css.js'></script>
 </html>
