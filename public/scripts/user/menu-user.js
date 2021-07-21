@@ -1,11 +1,10 @@
 
 $(document).ready(function(){
   var uri = 'http://localhost:3000/user/';
-
   fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
   .then(response => response.text())
   .then(result => {
-      criarTabela(result);
+    criarTabela(result);
   })
   .catch(error => console.log('error', error));   
 });
@@ -28,7 +27,7 @@ function criarTabela(data){
           tr.append('<td>' + user[attr] + '</td>');
       });
       tr.append(
-          '<td>' + 
+          '<td class="td-acoes">' + 
               '<a rel="lightbox" title="Imagem 6">' +
                   '<img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>' +
               '<a rel="lightbox" title="Imagem 6">' +

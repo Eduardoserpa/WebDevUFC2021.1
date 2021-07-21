@@ -33,71 +33,79 @@
     </script>
 </head>
 <body>
-    <div class="row header">
-        <div class="col-5">
-            <a onclick="location.href='/'" id="title">VENDAS NOW</a>
-        </div>
-        <div class="col-5">
-            <a href="#home" id="title-desc">Sobre a Loja</a>
-        </div>
-    </div>
-    <div class="container-inicial-principal">
-        <div class="row main">
+    <div class="page">
+        <div class="row header">
             <div class="col-5">
-                <div class="caixas-login">
-                    <div id="gallery">
-                        <div class="title-container">
-                            <h2>Seja Bem-Vindo</h2>
-                        </div>
-                        <form name="login">
-                            <div class="form-group">
-                                <div class="item-group">
-                                    <label for="email">Usuário</label>
-                                    <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter user">
-                                </div>
-                                <div class="item-group">
-                                    <label for="senha">Senha</label>
-                                    <input type="password" class="form-control" name="senha">
-                                </div>
+                <a onclick="location.href='/'" id="title">VENDAS NOW</a>
+            </div>
+            <div class="col-5">
+                <a href="#home" id="title-desc">Sobre a Loja</a>
+            </div>
+        </div>
+        <div class="container-inicial-principal">
+            <div class="row main">
+                <div class="col-5">
+                    <div class="caixas-login">
+                        <div id="gallery">
+                            <div class="title-container">
+                                <h2>Seja Bem-Vindo</h2>
                             </div>
-                            <button 
-                                class="btn btn-dark"
-                                onclick="postLogin(login.email,login.senha)"
-                            >
-                                Entrar
-                            </button>
-                            <label id="loginHelp" class="form-text text-muted">
-                                Não possui cadastro? <u><b>Clique aqui</b></u>
-                            </label>
-                        </form>
-                    </div>                
+                            <form name="login">
+                                <div class="form-group">
+                                    <div class="item-group">
+                                        <label for="email">Usuário</label>
+                                        <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter user">
+                                    </div>
+                                    <div class="item-group">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" class="form-control" name="senha">
+                                    </div>
+                                </div>
+                                <button 
+                                    class="btn btn-dark"
+                                    onclick="postLogin(login.email,login.senha)"
+                                >
+                                    Entrar
+                                </button>
+                                <label id="loginHelp" class="form-text text-muted">
+                                    Não possui cadastro? <u><b>Clique aqui</b></u>
+                                </label>
+                            </form>
+                        </div>                
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="caixas">
+                        <div> 
+                            <img src="../imagens/vendas/image 8.png" class="img-fluid" alt="Responsive image">
+                            <br />
+                        </div>                
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="caixas">
-                    <div> 
-                        <img src="../imagens/vendas/image 8.png" class="img-fluid" alt="Responsive image">
-                        <br />
-                    </div>                
+            <hr class="line" />
+            <div class="rodape">
+                <div>
+                    <h6>Projeto desenvolvido pela equipe Azul na disciplina de Desenvolvimento Web - UFC</h6>
                 </div>
-            </div>
-        </div>
-        <hr class="line" />
-        <div>
-            <h6>Projeto desenvolvido pela equipe Azul na disciplina de Desenvolvimento Web - UFC</h6>
-        </div>
-        <div class="row"> 
-            <div class="col-4">
-
-            </div>
-            <div class="col-2">
-                <h4>Contato</h4>
-            </div>
-            <div class="col-2">
-                <h4>Suporte</h4>
-            </div>
-            <div class="col-4"></div>
-        </div>
+        
+                <div class="row"> 
+                    <div class="col-4">
+        
+                    </div>
+                    <div class="col-2">
+                        <h4>Contato</h4>
+                    </div>
+                    <div class="col-2">
+                        <h4>Suporte</h4>
+                    </div>
+                    <div class="col-5">
+                        <input id = "altcss" type="button" value="DARK MODE">
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div> 
+    </div>   
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">          
@@ -121,4 +129,5 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src='scripts/alt-css.js'></script>
 </html>
