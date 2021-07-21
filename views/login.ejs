@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="utf-8"/> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Vendas Now</title>
+<%- contentFor('secao1') %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
-        function postLogin(email, senha) {
-            var uri = `http://localhost:3000/login/`;
-            var req = new XMLHttpRequest();
-            req.open('GET',uri,false);
-            req.setRequestHeader("email", email.value);
-            req.setRequestHeader("senha", senha.value);
-            req.send();
-            if (req.status === 200 || req.status === 304) {
-                var response = req.responseText;
-                if(response === 'true'){
-                    window.location.replace("/myProfile");
-                }
-                else{
-                    $('#myModal').modal('show');
-                }
-            }
-            else{
-                $('#myModal').modal('show');
-            }
-        }
-    </script>
-</head>
-<body>
+<%- contentFor('secao2') %>
     <div class="page">
         <div class="row header">
             <div class="col-5">
                 <a onclick="location.href='/'" id="title">VENDAS NOW</a>
             </div>
             <div class="col-5">
-                <a href="#home" id="title-desc">Sobre a Loja</a>
+                <a href="" id="title-desc">Sobre a Loja</a>
             </div>
         </div>
         <div class="container-inicial-principal">
@@ -83,33 +52,10 @@
                     </div>
                 </div>
             </div>
-            <hr class="line" />
-            <div class="rodape">
-                <div>
-                    <h6>Projeto desenvolvido pela equipe Azul na disciplina de Desenvolvimento Web - UFC</h6>
-                </div>
-        
-                <div class="row"> 
-                    <div class="col-4">
-        
-                    </div>
-                    <div class="col-2">
-                        <h4>Contato</h4>
-                    </div>
-                    <div class="col-2">
-                        <h4>Suporte</h4>
-                    </div>
-                    <div class="col-5">
-                        <input id = "altcss" type="button" value="DARK MODE">
-                    </div>
-                    <div class="col-4"></div>
-                </div>
-            </div> 
-    </div>   
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">          
-                <!-- Modal content-->
                 <div class="modal-content"> 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -127,7 +73,6 @@
                 </div>            
             </div>
         </div>
-    </div>
-</body>
-<script type="text/javascript" src='scripts/alt-css.js'></script>
-</html>
+    </div>   
+<%- contentFor('secao3') %>    
+<script type="text/javascript" src='scripts/user/login.js'></script>

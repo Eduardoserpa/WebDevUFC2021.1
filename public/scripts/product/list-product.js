@@ -27,11 +27,14 @@ function criarTabela(data){
     var array = JSON.parse(data);
     array.forEach(function(user) {
         var tr = $('<tr>');
-        [ 'nome', 'categoria', 'estoque', 'valor','estoque'*'valor'].forEach(function(attr) {
+        var valorTotal = user.estoque * user.valor;
+        user.total = valorTotal;
+        
+        [ 'nome', 'categoria', 'estoque', 'valor','total'].forEach(function(attr) {
             tr.append('<td>' + user[attr] + '</td>');
         });
         tr.append(
-            '<td>' + 
+            '<td class="td-acoes">' + 
                 '<a rel="lightbox" title="Imagem 6">' +
                     '<img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>' +
                 '<a rel="lightbox" title="Imagem 6">' +

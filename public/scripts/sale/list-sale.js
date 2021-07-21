@@ -24,11 +24,22 @@ $(document).ready(function(){
     var array = JSON.parse(data);
     array.forEach(function(user) {
         var tr = $('<tr>');
-        [ 'nome', 'tipo', '_id', 'email'].forEach(function(attr) {
-            tr.append('<td>' + user[attr] + '</td>');
+        var valorVenda = 0;
+        // user.products.forEach((product) => {
+        //     valorVenda += product
+        // });
+
+        [ 'date', '_id', 'user', 'valor'].forEach(function(attr) {
+            var date = new Date(user['date']);
+            var _date = date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
+            var value = attr === 'date' ? _date : user[attr];
+            
+            if(attr === 'valor') value = valorVenda;
+
+            tr.append('<td>' + value + '</td>');
         });
         tr.append(
-            '<td>' + 
+            '<td class="td-acoes">' + 
                 '<a rel="lightbox" title="Imagem 6">' +
                     '<img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>' +
                 '<a rel="lightbox" title="Imagem 6">' +
