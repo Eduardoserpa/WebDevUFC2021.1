@@ -1,4 +1,5 @@
 <%- contentFor('secao1') %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <%- contentFor('secao2') %>
     <div class="page">
@@ -68,17 +69,17 @@
                 </div>
                 <div id="gallery" class="container-filtro">
                     <div class="title-container">
-                        <label class="label-desc">
-                            Seu nome:&nbsp;&nbsp;&nbsp;<b>Administrador</b>
+                        <label class="label-desc" id="label-nome">
+                            Seu nome:&nbsp;&nbsp;&nbsp;
                         </label> <br/>
-                        <label class="label-desc">
-                            Perfil:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Admin</b> 
+                        <label class="label-desc" id="label-perfil">
+                            Perfil:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </label> <br/>
-                        <div class="label-desc">
-                            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>admin@vendasnow.com</b>
+                        <div class="label-desc" id="label-email">
+                            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </div> <br/>
-                        <label class="label-desc">
-                            Código:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>001</b>
+                        <label class="label-desc" id="label-codigo">
+                            Código:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </label> 
                     </div>    
                     <form>
@@ -108,3 +109,4 @@
         </div>
     </div>
     <%- contentFor('secao3') %>    
+    <script type="text/javascript" src='scripts/user/myProfile.js'></script>

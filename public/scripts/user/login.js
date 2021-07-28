@@ -7,8 +7,10 @@ function postLogin(email, senha) {
     req.send();
     if (req.status === 200 || req.status === 304) {
         var response = req.responseText;
-        if(response === 'true'){
-            window.location.replace("/myProfile");
+        var resp = JSON.parse(response); 
+        console.log(resp);
+        if(resp.exist === true){
+            window.location.replace("/myProfile?id=" + resp.user._id);
         }
         else{
             var modal = $('#myModal');
