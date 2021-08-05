@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
-  var param = getUrlParameter('id');
-  var uri = 'http://localhost:3000/user/' + param;
+  var session = sessionStorage.getItem('id');
+  var uri = 'http://localhost:3000/user/' + session;
 
   fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
   .then(response => response.text())

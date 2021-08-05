@@ -30,7 +30,7 @@
                         </h3>
                         <ul class="box">					
                             <li><a href="/listSale">Lista de Vendas</a></li> 			
-                            <li><a href="#">Cadastro de Vendas</a></li> 			
+                            <li><a href="/addSale">Cadastro de Vendas</a></li> 			
                         </ul>                    
                         <h3 class="link-titulo" onclick="location.href='/listProduct'">
                             <a href="/listProduct" rel="lightbox" title="Imagem 6">
@@ -39,7 +39,7 @@
                         </h3>
                         <ul class="box">
                             <li><a href="/listProduct">Lista de Estoque</a></li>
-                            <li><a href="#">Cadastro de Produtos</a></li>
+                            <li><a href="/addProduct">Cadastro de Produtos</a></li>
                         </ul>   
                         <h3 class="link-titulo" onclick="location.href='/myProfile'">
                             <a href="/myProfile" rel="lightbox" title="Imagem 6">
@@ -84,8 +84,7 @@
                             <div class="item-group">
                                 <div class="row">
                                     <div class="col-5">
-                                        <label for="produto" class="form-label">Produto</label>
-                                        <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o código ou o nome do produto">
+                                        <%- include('../components/searchInput.ejs', {title:'Produto'}); %> 
                                     </div>
                                     <div class="col-10"></div>
                                     <div class="col-5">

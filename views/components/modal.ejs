@@ -1,0 +1,21 @@
+<div class="modal fade" id="modal-comp" role="dialog">
+    <div class="modal-dialog">          
+        <div class="modal-content"> 
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    <%= typeof title != 'undefined' ? title : 'default' %>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <label id="loginHelp" class="form-text text-muted">
+                    Tente novamente ou procure o gerente para realizar o seu cadastro no sistema.
+                    Não possui cadastro? <u><b>Clique aqui</b></u>
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>            
+    </div>
+</div>
