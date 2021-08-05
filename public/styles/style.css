@@ -489,7 +489,7 @@ label {
 .foto-label{
     padding-left: 28%;
 }
-.form-control {
+/* .form-control {
     display: block;
     width: 100%;
     height: calc(1.5em + .75rem + 2px);
@@ -503,9 +503,8 @@ label {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.form-control-inline {
-    /* display: inline; */
+} */
+/* .form-control-inline {
     width: 80%;
     height: calc(1em + .75rem + 1px);
     padding: .375rem .75rem;
@@ -518,7 +517,7 @@ label {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+} */
 .btn {
     display: inline-block;
     font-weight: 400;

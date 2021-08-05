@@ -25,16 +25,17 @@ $(document).ready(function(){
     array.forEach(function(user) {
         var tr = $('<tr>');
         var valorVenda = 0;
-        // user.products.forEach((product) => {
-        //     valorVenda += product
-        // });
+        user.products.forEach((produto) => {
+            console.log(produto);
+            valorVenda += produto.product.valor * produto.quantidade;
+        });
 
         [ 'date', '_id', 'user', 'valor'].forEach(function(attr) {
             var date = new Date(user['date']);
             var _date = date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
             var value = attr === 'date' ? _date : user[attr];
             
-            if(attr === 'valor') value = valorVenda;
+            if(attr === 'valor') value = valorVenda.toFixed(2);
 
             tr.append('<td>' + value + '</td>');
         });

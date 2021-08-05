@@ -2,6 +2,8 @@ function postLogin(email, senha) {
     var uri = `http://localhost:3000/login/`;
     var req = new XMLHttpRequest();
     req.open('GET',uri,false);
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
+    req.setRequestHeader('Accept', '*/*');
     req.setRequestHeader("email", email.value);
     req.setRequestHeader("senha", senha.value);
     req.send();
@@ -10,7 +12,8 @@ function postLogin(email, senha) {
         var resp = JSON.parse(response); 
         console.log(resp);
         if(resp.exist === true){
-            window.location.replace("/myProfile?id=" + resp.user._id);
+            sessionStorage.setItem('id',resp.user._id);
+            window.location.replace("/myProfile");
         }
         else{
             var modal = $('#myModal');
