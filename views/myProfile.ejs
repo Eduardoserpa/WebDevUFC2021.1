@@ -15,14 +15,17 @@
                                 <img src="../../imagens/icones/image 9.png" width="30" height="30" alt="" title="Home"/></a>
                             Home
                         </h3><br/>                
-                        <h3 class="link-titulo" onclick="location.href='/menuUser'">
-                            <a rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
-                            Usuário
-                        </h3>
-                        <ul class="box">
-                            <li><a href="/menuUser">Lista de Usuários</a></li>
-                        </ul>                
+                        <% if(user==='admin'){ %>
+                            <h3 class="link-titulo" onclick="location.href='/menuUser'">
+                                <a rel="lightbox" title="Imagem 6">
+                                    <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
+                            
+                                Usuário
+                            </h3>
+                            <ul class="box">
+                                <li><a href="/menuUser">Lista de Usuários</a></li>
+                            </ul>              
+                            <% }%>                
                         <h3 class="link-titulo" onclick="location.href='/listSale'">
                             <a href="/listSale" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 11.png" width="30" height="30" alt="" title="Usuario"/></a>
