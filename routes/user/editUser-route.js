@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/editUser', function(req, res, next) {
-  res.render('user/editUser')
+  const user = req.cookies.user;  
+    res.render('user/editUser', {user})
 })
 
 module.exports = router

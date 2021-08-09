@@ -15,7 +15,7 @@
                             Home
                         </h3><br/>                
                         
-                        <%= if(user==='admin'){ %>
+                        <% if(user==='admin'){ %>
                         <h3 class="link-titulo" onclick="location.href='/menuUser'">
                             <a rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
@@ -24,7 +24,7 @@
                         <ul class="box">
                             <li><a href="/menuUser">Lista de Usuários</a></li>
                         </ul>              
-                        <%= }%>
+                        <% }%>
                         <h3 class="link-titulo" onclick="location.href='/listSale'">
                             <a href="/listSale" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 11.png" width="30" height="30" alt="" title="Usuario"/></a>
@@ -58,7 +58,8 @@
                 <a href="" id="title-desc">Sobre a Loja</a>
             </div>
             <div class="col-1">
-                <button class="button-header" onclick="window.location.replace('/login')" >Sair</button>
+                <button id = bnt-sair class="button-header" onclick="window.location.replace('/login')" > Sair</button>
+                
             </div>
         </div>
         <div>
