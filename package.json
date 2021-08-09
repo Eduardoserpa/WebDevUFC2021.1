@@ -4,7 +4,7 @@
   "description": "Projeto de desenvolvimento de site para compra de vestuário. Segue, abaixo, a contribuição de cada membro do grupo.",
   "main": "app.js",
   "scripts": {
-    "dev": "node node_modules/nodemon/bin/nodemon.js app",
+    "dev": "node node_modules/nodemon/bin/nodemon.js app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
