@@ -10,12 +10,10 @@ function postLogin(email, senha) {
     console.log(req.status)
     
     if (req.status === 200 || req.status === 304) {
-        
-        document.cookie = 'user=joir'
         var response = req.responseText;
         var resp = JSON.parse(response); 
-        console.log("AQUI = ", resp)
         if(resp.exist === true){
+            document.cookie = `user=${resp.user.tipo}`;
             sessionStorage.setItem('id',resp.user._id);
             window.location.replace("/myProfile");
         }
