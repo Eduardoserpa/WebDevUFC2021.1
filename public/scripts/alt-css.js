@@ -41,7 +41,7 @@ function changeCSS(cssFile, cssLinkIndex) {
   document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 }
 
-
-botaoSair.addEventListener("click", () => {
+function logout(){
   document.cookie = 'user= ;'
-});
+  window.location.replace('/login')
+}
