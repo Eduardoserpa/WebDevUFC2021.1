@@ -243,6 +243,7 @@ ul.pagination li a.active {
     box-shadow: 0 0 10px #ccc;  
 }
 .container-header{
+    font: normal 18pt Arial;
     background:rgb(31, 42, 54);
     padding:10px;
     color: white;
@@ -522,6 +523,7 @@ label {
     color: black;
 }
 .btn {
+    margin-right: 3px;
     display: inline-block;
     font-weight: 400;
     color: #212529;

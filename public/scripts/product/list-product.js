@@ -1,7 +1,5 @@
 $(document).ready(function(){
-
-    var uri = 'http://localhost:3000/product/';
-  
+    var uri = 'http://localhost:3000/product/';  
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
     .then(response => response.text())
     .then(result => {
@@ -9,6 +7,12 @@ $(document).ready(function(){
     })
     .catch(error => console.log('error', error));
 });
+
+function editarProduto(){
+    var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
+    sessionStorage.setItem('id-editar',id);
+    window.location.replace('/addProduct?id=' + id);
+}
 
 function excluirProduto(){
     var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
@@ -35,7 +39,6 @@ function deleteProduct() {
     req.send();
 }
 
-
 function criarTabela(data){
     var container = $('#my-container'),
     table = $('<table>').addClass('table');
@@ -60,8 +63,14 @@ function criarTabela(data){
         tr.append(
             '<td>' +         
                 '<button type="submit" class="btn btn-primary" onClick="excluirProduto()">Excluir</button>' +
+                '<button type="submit" class="btn btn-warning" onClick="editarProduto()">Editar</button>' +
             '</td>'
-        );      
+        );  
+        // tr.append(
+        //     '<td>' +         
+        //         '<button type="submit" class="btn btn-warning" onClick="excluirProduto()">Editar</button>' +
+        //     '</td>'
+        // );
         table.append(tr);
     });  
     container.append(table);
