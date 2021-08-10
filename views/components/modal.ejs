@@ -9,8 +9,9 @@
             </div>
             <div class="modal-body">
                 <label id="loginHelp" class="form-text text-muted">
-                    Tente novamente ou procure o gerente para realizar o seu cadastro no sistema.
-                    Não possui cadastro? <u><b>Clique aqui</b></u>
+                    <%= typeof body != 'undefined' ? body : 
+                    'Tente novamente ou procure o gerente para realizar o seu cadastro no sistema. Não possui cadastro? Clique aqui' 
+                    %>
                 </label>
             </div>
             <div class="modal-footer">

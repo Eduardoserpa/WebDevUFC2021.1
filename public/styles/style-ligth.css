@@ -496,6 +496,9 @@ th {
     padding-right: 15px;
     padding-left: 15px;
 }
+.modal-title{
+    color: black;
+}
 label {
     display: inline-block;
     margin-bottom: .5rem;

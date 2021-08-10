@@ -1,6 +1,6 @@
 <%- contentFor('secao1') %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <%- contentFor('secao2') %>
     <div class="page">
         <div class="row header">
@@ -71,18 +71,22 @@
                     <div class="title-container">
                         <label class="label-desc" id="label-nome">
                             Seu nome:&nbsp;&nbsp;&nbsp;
+                            <label class="label-desc" id="nome"></label>
                         </label> <br/>
                         <label class="label-desc" id="label-perfil">
                             Perfil:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="label-desc" id="perfil"></label>
                         </label> <br/>
                         <div class="label-desc" id="label-email">
                             Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="label-desc" id="email"></label>
                         </div> <br/>
                         <label class="label-desc" id="label-codigo">
                             Código:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="label-desc" id="codigo"></label>
                         </label> 
                     </div>    
-                    <form>
+                    <form id='user-form' onsubmit="return false">
                         <div class="form-group">
                             <div class="row item-group">
                                 <div class="col-5">
@@ -102,9 +106,10 @@
                             Deseja mudar de senha? Preencha os campos <b>Senha</b> e <b>Confirmação de senha</b>
                             logo abaixo. Não esqueça de clicar em <b>Salvar dados</b>
                         </label><br/>
-                        <button type="submit" class="btn btn-dark">Salvar dados</button>
+                        <button type="submit" class="btn btn-dark" id="btn-salvar">Salvar dados</button>
                     </form>
                 </div>
+                <%- include('components/modal.ejs', {title:'Usuário', body: 'Usuário atualizado com sucesso'}); %> 
             </div>
         </div>
     </div>

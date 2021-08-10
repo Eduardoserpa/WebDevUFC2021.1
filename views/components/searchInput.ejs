@@ -2,17 +2,20 @@
     <label for="produto" class="form-label">
         <%= typeof title != 'undefined' ? title : 'default' %>
     </label>
-    <div class="input-group">
+    <div class="input-group mb-3">
         <input 
             type="text" 
             class="form-control" 
-            id="produto" 
-            name="produto" 
             placeholder="Digite o código ou o nome do produto"
-        />
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="button-addon2">
-            </button>
-        </span>
-    </div>           
+            id="produto" 
+            name="produto"
+        >   
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="button-addon2" onclick="getProduct()">
+                <img src="../../imagens/icones/search-solid.svg" width="13" height="13" alt=""/>
+          </button>
+        </div>
+    </div>          
 </div>
+
+<script type="text/javascript" src='scripts/product/searchInput.js'></script>
