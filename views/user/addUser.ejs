@@ -1,5 +1,6 @@
 <%- contentFor('secao1') %>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <%- contentFor('secao2') %>
         <div class="row header">
             <div class="col-5">
@@ -19,7 +20,7 @@
                                 <h2>Crie sua conta</h2>
                             </div>
             
-                            <form>
+                            <form id = "newForm">
                                 <div class="form-group">
                                     <div class="item-group">
                                         <label for="nome">Seu nome</label>
@@ -30,16 +31,19 @@
                                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
                                     <div class="item-group">
-                                        <label for="senha">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha">
+                                        <label for="senha1">Senha</label>
+                                        <input type="password" class="form-control" id="senha1" name="senha1" onchange="validarSenha1()">
+                                        <p id="verSenha1"></p>
                                     </div>
                                     <div class="item-group">
                                         <label for="senha2">Confirme sua senha</label>
-                                        <input type="password" class="form-control" id="senha2" name="senha2">
+                                        <input type="password" class="form-control" id="senha2" name="senha2"
+                                        onchange="validarSenha2()">
+                                        <p id="verSenha2"></p>
                                     </div>     
                                 </div>
     
-                                <button type="submit" class="btn btn-dark">Crie sua conta</button>
+                                <button type="submit" class="btn btn-dark" onclick="postUser()">Crie sua conta</button>                              
                                 <br/><small >
                                     Ao criar sua conta, você concorda com as <b>Condições de Uso</b>
                                     da Vendas Now.<br/> Por favor verifique a 
@@ -48,6 +52,25 @@
                                 </small> 
     
                             </form>
+                            <div class="modal fade" id="modal-comp" role="dialog">
+                                <div class="modal-dialog">          
+                                    <div class="modal-content"> 
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label id="loginHelp" class="form-text text-muted">
+                                                Confira os dados informados e Tente novamente ou procure o gerente para realizar o seu cadastro no sistema.
+                                            </label>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>            
+                                </div>
+                            </div> 
                         </div>                
                     </div>
                 </div>
@@ -63,4 +86,5 @@
             </div>
         </div>
 
-        <%- contentFor('secao3') %>   
+        <%- contentFor('secao3') %>
+        <script type="text/javascript" src='scripts/user/add-user.js'></script>   
