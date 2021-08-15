@@ -39,6 +39,10 @@ function deleteProduct() {
     req.send();
 }
 
+$('#modal-comp').on('hidden.bs.modal', function () {
+    window.location.reload();
+});
+
 function criarTabela(data){
     var container = $('#my-container'),
     table = $('<table>').addClass('table');
@@ -65,12 +69,7 @@ function criarTabela(data){
                 '<button type="submit" class="btn btn-primary" onClick="excluirProduto()">Excluir</button>' +
                 '<button type="submit" class="btn btn-warning" onClick="editarProduto()">Editar</button>' +
             '</td>'
-        );  
-        // tr.append(
-        //     '<td>' +         
-        //         '<button type="submit" class="btn btn-warning" onClick="excluirProduto()">Editar</button>' +
-        //     '</td>'
-        // );
+        );
         table.append(tr);
     });  
     container.append(table);

@@ -200,7 +200,11 @@ ul.pagination li a.active {
     background: #E5F0FF;
     color: #039;
 }
-
+.input-label{
+    font: normal 14pt Arial;
+    color:black;
+    font-weight:bold;
+}
 .form-label{
     font: normal 14pt Arial;
     color:black;
@@ -486,6 +490,7 @@ th {
 label {
     display: inline-block;
     margin-bottom: .5rem;
+    font: normal 14pt Arial;
 }
 .foto-label{
     padding-left: 28%;
