@@ -210,11 +210,7 @@ ul.pagination li a.active {
     color: #039;
 }
 
-.form-label{
-    font: normal 14pt Arial;
-    color:rgb(255, 255, 255);
-    font-weight:bold;
-}
+
 .label-desc{
     font: normal 16pt Arial;
     color:rgb(255, 255, 255);
@@ -496,10 +492,24 @@ th {
     padding-right: 15px;
     padding-left: 15px;
 }
+.modal-title{
+    color: black;
+}
 label {
+    font: normal 14pt Arial;
     display: inline-block;
     margin-bottom: .5rem;
     color: rgb(255,255,255);
+}
+.form-label{
+    font: normal 14pt Arial;
+    color:white;
+    font-weight:bold;
+}
+.input-label{
+    font: normal 14pt Arial;
+    color:white;
+    font-weight:bold;
 }
 .foto-label{
     padding-left: 28%;

@@ -200,7 +200,11 @@ ul.pagination li a.active {
     background: #E5F0FF;
     color: #039;
 }
-
+.input-label{
+    font: normal 14pt Arial;
+    color:black;
+    font-weight:bold;
+}
 .form-label{
     font: normal 14pt Arial;
     color:black;
@@ -243,6 +247,7 @@ ul.pagination li a.active {
     box-shadow: 0 0 10px #ccc;  
 }
 .container-header{
+    font: normal 18pt Arial;
     background:rgb(31, 42, 54);
     padding:10px;
     color: white;
@@ -485,6 +490,7 @@ th {
 label {
     display: inline-block;
     margin-bottom: .5rem;
+    font: normal 14pt Arial;
 }
 .foto-label{
     padding-left: 28%;
@@ -518,7 +524,11 @@ label {
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 } */
+.modal-title{
+    color: black;
+}
 .btn {
+    margin-right: 3px;
     display: inline-block;
     font-weight: 400;
     color: #212529;
