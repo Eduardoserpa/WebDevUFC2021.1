@@ -7,11 +7,13 @@ function postLogin(email, senha) {
     req.setRequestHeader("email", email.value);
     req.setRequestHeader("senha", senha.value);
     req.send();
+    console.log(req.status)
+    
     if (req.status === 200 || req.status === 304) {
         var response = req.responseText;
         var resp = JSON.parse(response); 
-        console.log(resp);
         if(resp.exist === true){
+            document.cookie = `user=${resp.user.tipo}`;
             sessionStorage.setItem('id',resp.user._id);
             window.location.replace("/myProfile");
         }
@@ -21,6 +23,7 @@ function postLogin(email, senha) {
         }
     }
     else{
+        console.log("3")
         $('#myModal').modal('show');
     }
 }

@@ -1,7 +1,6 @@
 const botaoCss = document.getElementById("altcss");
 const cookieValue = JSON.parse(localStorage.getItem('modeCss'));
-
-document.cookie = 'user=admin'
+const botaoSair = document.getElementById("bnt-sair");
 
 if(cookieValue === null || cookieValue === 'ligth'){
   changeCSS('styles/style.css', 0);
@@ -40,4 +39,9 @@ function changeCSS(cssFile, cssLinkIndex) {
   newlink.setAttribute("type", "text/css");
   newlink.setAttribute("href", cssFile);
   document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+}
+
+function logout(){
+  document.cookie = 'user= ;'
+  window.location.replace('/login')
 }

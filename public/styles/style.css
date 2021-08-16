@@ -123,6 +123,15 @@ a:link {
 a:visited {
     text-decoration:none;
 }
+
+#cliqueAdd{
+    color: #555555;
+}
+#cliqueAdd:hover{
+    color: #5555557c;
+    text-decoration: underline #5555557c;
+}
+
 #caixa_mensagem{
     height: 110px;
     width: 280px;
@@ -686,4 +695,14 @@ li {
 }
 .link-titulo{
     padding-top: 10px;
+}
+
+#verSenha1{
+    color: red;
+    font-size: 12px;
+}
+
+#verSenha2{
+    color: red;
+    font-size: 12px;
 }
