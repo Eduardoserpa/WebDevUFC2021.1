@@ -1,45 +1,70 @@
-//Pending writing
+//Update or Delete
+/*
 $(document).ready(function(){
 
     var uri = 'http://localhost:3000/product/';
-  
+    //Find the entry to change or remove
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
     .then(response => response.text())
     .then(result => {
-        criarTabela(result);
+        putProduct(result);
     })
     .catch(error => console.log('error', error));
-});
+});*/
 
+function putProduct() {
+    var uri = `http://localhost:3000/product/`;
 
-function criarTabela(data){
-    var container = $('#my-container'),
-    table = $('<table>').addClass('table');
-    var tr_head = $('<tr>');
-    tr_head.append('<th>' + 'Produto' + '</th>');
-    tr_head.append('<th>' + 'Categoria' + '</th>');
-    tr_head.append('<th>' + 'Quantidade em Estoque' + '</th>');
-    tr_head.append('<th>' + 'Valor (Unidade)' + '</th>');
-    tr_head.append('<th>' + 'Valor (Total)' + '</th>');
-    tr_head.append('<th>' + 'Ações' + '</th>');
-    table.append(tr_head);
-  
-    var array = JSON.parse(data);
-    array.forEach(function(user) {
-        var tr = $('<tr>');
-        [ 'nome', 'categoria', 'estoque', 'valor','estoque'*'valor'].forEach(function(attr) {
-            tr.append('<td>' + user[attr] + '</td>');
-        });
-        tr.append(
-            '<td>' + 
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>' +
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>' + 
-            '</td>'
-        );      
-        table.append(tr);
+    var nome = $('#nome').val();
+    var categoria = $('#categoria').val();
+    var id = $('#_id').val();
+    var valor = $('#valor').val();
+    var quantidade = $('#quantidade').val();
+    uri.append(id);
+    window.alert(uri);
+
+    var data = JSON.stringify({
+        "nome": nome,
+        "categoria": categoria,
+        "valor": parseFloat(valor),
+        "estoque": parseInt(quantidade)
     });
-  
-    container.append(table);
+    var req = new XMLHttpRequest();
+    req.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+        console.log(this.responseText);
+        new Promise(() =>{
+            console.log('promise');
+            var modal = $('#modal-comp');
+            modal.modal('show');
+        });    }
+    });
+    req.open("PUT",uri,false);
+    req.setRequestHeader("Content-Type", "application/json"); 
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
+    req.setRequestHeader('Accept', '*/*');    
+    req.send(data);
+}
+
+function deleteProduct() {
+    var uri = `http://localhost:3000/product/`;
+    var id = $('#_id').val();
+    uri.append(id);
+    window.alert(uri);
+
+    var req = new XMLHttpRequest();
+    req.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+        console.log(this.responseText);
+        new Promise(() =>{
+            console.log('promise');
+            var modal = $('#modal-comp');
+            modal.modal('show');
+        });    }
+    });
+    req.open("DELETE",uri,false);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
+    req.setRequestHeader('Accept', '*/*');
+    /*req.send(data);*/
 }
