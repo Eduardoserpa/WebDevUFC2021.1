@@ -1,6 +1,6 @@
 <%- contentFor('secao1') %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <%- contentFor('secao2') %>
     <div class="page">
         <div class="row header">
@@ -74,30 +74,34 @@
                 </div>
                 <div id="gallery" class="container-filtro">
                     <div class="title-container">
-                        <label class="label-desc" id="label-nome">
+                        <label id="label-nome">
                             Seu nome:&nbsp;&nbsp;&nbsp;
+                            <label id="nome"></label>
                         </label> <br/>
-                        <label class="label-desc" id="label-perfil">
+                        <label id="label-perfil">
                             Perfil:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label id="perfil"></label>
                         </label> <br/>
-                        <div class="label-desc" id="label-email">
+                        <label id="label-email">
                             Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div> <br/>
-                        <label class="label-desc" id="label-codigo">
+                            <label id="email"></label>
+                        </label> <br/>
+                        <label id="label-codigo">
                             Código:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label id="codigo"></label>
                         </label> 
                     </div>    
-                    <form>
+                    <form id='user-form' onsubmit="return false">
                         <div class="form-group">
                             <div class="row item-group">
                                 <div class="col-5">
-                                    <label for="senha" class="form-label">Senha</label>
+                                    <label for="senha">Senha</label>
                                     <input type="password" class="form-control" id="senha" name="senha">
                                 </div>    
                             </div>
                             <div class="row item-group">
                                 <div class="col-5">
-                                    <label for="senha2" class="form-label">Repita sua senha</label>
+                                    <label for="senha2">Repita sua senha</label>
                                     <input type="password" class="form-control" id="senha2" name="senha2">
                                 </div>                        
                             </div>     
@@ -107,9 +111,10 @@
                             Deseja mudar de senha? Preencha os campos <b>Senha</b> e <b>Confirmação de senha</b>
                             logo abaixo. Não esqueça de clicar em <b>Salvar dados</b>
                         </label><br/>
-                        <button type="submit" class="btn btn-dark">Salvar dados</button>
+                        <button type="submit" class="btn btn-dark" id="btn-salvar">Salvar dados</button>
                     </form>
                 </div>
+                <%- include('components/modal.ejs', {title:'Usuário', body: 'Usuário atualizado com sucesso'}); %> 
             </div>
         </div>
     </div>
