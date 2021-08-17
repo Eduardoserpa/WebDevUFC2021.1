@@ -141,13 +141,12 @@
                     </div>
     
                     <div>
-                        <button type="submit" class="btn btn-dark">Finalizar Venda</button>
+                        <button type="submit" class="btn btn-dark" onclick="postSale()">Finalizar Venda</button>
                         <button type="submit" class="btn btn-dark">Cancelar Venda</button>
                      </div>
                 </div>
-
-
             </div>
+            <%- include('../components/modal.ejs', {title:'Venda', body: 'Venda cadastrada com sucesso'}); %> 
         </div>
 </div>
 <%- contentFor('secao3') %>

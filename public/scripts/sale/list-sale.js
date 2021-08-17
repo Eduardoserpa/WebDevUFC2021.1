@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
-    var uri = 'http://localhost:3000/sale/';
-  
+    var uri = 'http://localhost:3000/sale/';  
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
     .then(response => response.text())
     .then(result => {
@@ -10,7 +9,7 @@ $(document).ready(function(){
     .catch(error => console.log('error', error));   
   });
   
-  function criarTabela(data){
+function criarTabela(data){
     var container = $('#my-container'),
     table = $('<table>').addClass('table');
     var tr_head = $('<tr>');
@@ -53,7 +52,6 @@ $(document).ready(function(){
         );      
         table.append(tr);
     });
-  
-            container.append(table);
-        }
+    container.append(table);
+}
     
