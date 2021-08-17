@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     var uri = 'http://localhost:3000/sale/';  
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
@@ -25,33 +24,37 @@ function criarTabela(data){
         var tr = $('<tr>');
         var valorVenda = 0;
         user.products.forEach((produto) => {
-            console.log(produto);
             valorVenda += produto.product.valor * produto.quantidade;
         });
 
         [ 'date', '_id', 'user', 'valor'].forEach(function(attr) {
             var date = new Date(user['date']);
-            var _date = date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
-            var value = attr === 'date' ? _date : user[attr];
+            var value = attr === 'date' ? dataAtualFormatada(date) : user[attr];
             
             if(attr === 'valor') value = valorVenda.toFixed(2);
+            if(attr === 'user') value = user[attr].nome;
 
             tr.append('<td>' + value + '</td>');
         });
         tr.append(
-            '<td class="td-acoes">' + 
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/user-friends-solid.svg" width="20" height="20" alt="" title="Cadastrar" /></a>' +
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>' +
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/list-solid.svg" width="20" height="20" alt="" title="Listar" /></a>' +
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>' + 
+            '<td>' +      
+            '<button type="submit" class="btn btn-light btn-lg btn-table">' +
+            '<a rel="lightbox" title="Imagem 6"><img src="../../imagens/icones/list-solid.svg" width="15" height="15" alt="" title="Detalhes"/></a>'+ 
+            '</button>' +   
+                '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirProduto()">Excluir</button>' +
+                '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarProduto()">Editar</button>' +
             '</td>'
-        );      
+        );     
         table.append(tr);
     });
     container.append(table);
 }
-    
+
+function dataAtualFormatada(data){
+    var dia  = data.getDate().toString(),
+        diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0'+mes : mes,
+        anoF = data.getFullYear();
+    return diaF+"/"+mesF+"/"+anoF;
+}

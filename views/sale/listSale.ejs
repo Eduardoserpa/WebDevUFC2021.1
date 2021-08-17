@@ -1,5 +1,6 @@
 <%- contentFor('secao1') %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <%- contentFor('secao2') %>
     <div class="page">
         <div class="row header">
@@ -63,11 +64,11 @@
                 <div class="container-header">
                     <div class="row">
                         <div class="col-6">
-                            <h5><b>Lista de Vendas</b></h5>
+                            <label id="produtoTitle">Lista de Vendas</label>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-2">
-                            <button type="submit" class="btn btn-secondary">
+                            <button type="submit" class="btn btn-secondary btn-lg">
                                 <img src="../../imagens/icones/plus-solid.svg" width="20" height="20" alt=""/>
                                 Nova Venda
                             </button>
@@ -86,12 +87,12 @@
                             <div class="item-group">
                                 <div class="row">
                                     <div class="col-5">
-                                        <label for="produto" class="form-label">Produto</label>
+                                        <label for="produto">Produto</label>
                                         <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o código ou o nome do produto">                                
                                     </div>
                                     <div class="col-1"></div>
                                     <div class="col-5">
-                                        <label for="vendedor" class="form-label">Vendedor</label>
+                                        <label for="vendedor">Vendedor</label>
                                         <input type="text" class="form-control" id="vendedor" name="vendedor" placeholder="Digite o código ou o nome do vendedor">
                                     </div>
                                 </div>
@@ -99,12 +100,12 @@
                             <div class="item-group">
                                 <div class="row">
                                     <div class="col-5">
-                                        <label for="venda" class="form-label">Código da venda</label>
+                                        <label for="venda">Código da venda</label>
                                         <input type="text" class="form-control" id="venda" name="venda" placeholder="Digite o código da venda">
                                     </div>
                                     <div class="col-1"></div>
                                     <div class="col-6">
-                                        <label for="data-inicio" class="form-label">Data (Período)</label><br/>
+                                        <label for="data-inicio">Data (Período)</label><br/>
                                         <div>
                                             <label>De </label> <input type="date" id="data-inicio" name="data-inicio" class="datetime">
                                             <label> Até </label> <input type="date" id="data-Fim" name="data-fim" class="datetime">
@@ -115,7 +116,7 @@
 
                         </div>
                         <div class="row form-btn">
-                            <button type="submit" class="btn btn-secondary" id="consultar-btn">
+                            <button type="submit" class="btn btn-secondary btn-lg" id="consultar-btn">
                                 <img src="../../imagens/icones/search-solid.svg" width="20" height="20" alt=""/>
                                 Consultar
                             </button>
@@ -139,3 +140,8 @@
 </div>
 <%- contentFor('secao3') %>
 <script type="text/javascript" src='scripts/sale/list-sale.js'></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

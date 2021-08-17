@@ -3,10 +3,22 @@ array = [];
 $( "#add-produto").click(function() {
     var produto = $('#produto').val();
     var quantidade = $('#quantidade').val();
-    var data = { product: produto.split(" ")[0], quantidade: quantidade };
+    var data = { 
+        product: produto.split(" ")[0], 
+        quantidade: parseInt(quantidade) 
+    };
     if(validaForm(data)){
-        array.push(data);
-        addTabela(data);
+        var exist = false;
+        array.forEach(element => {
+            if(element.product == data.product){
+                element.quantidade += data.quantidade;
+                exist = true;
+            }
+        });
+
+        if(!exist){ array.push(data); }
+        console.log(array);
+        addTabela(array);
     }
 });
 
@@ -20,12 +32,18 @@ function validaForm(data){
     }
 }
 
-function addTabela(data){
+function addTabela(array){
+    $("#table-sale tbody").remove(); 
     var table = $('table');
-    var tr = $('<tr>');
-    tr.append('<td>' + data.product + '</td>');
-    tr.append('<td>' + data.quantidade + '</td>');
-    table.append(tr);  
+    var tbody = $('<tbody>');
+
+    array.forEach(data => {
+        var tr = $('<tr>');
+        tr.append('<td>' + data.product + '</td>');
+        tr.append('<td>' + data.quantidade + '</td>');
+        tbody.append(tr);
+    });
+    table.append(tbody);  
 }
 function postSale() {
     var uri = `http://localhost:3000/sale/`;

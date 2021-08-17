@@ -154,10 +154,6 @@ img {
     overflow: auto; 
 }
 
-.table{
-    width:100%; 
-    /* border: 0.5px solid black; */
-}
 .table-totais{
     background-color: black;
     color: white;
@@ -210,7 +206,7 @@ ul.pagination li a.active {
     color: #039;
 }
 .input-label{
-    font: normal 14pt Arial;
+    font: normal 12pt Arial;
     color:black;
     font-weight:bold;
 }
@@ -225,10 +221,9 @@ ul.pagination li a.active {
 }
 
 .container-inicial{
-    margin-right: 10%;
-    
+    margin-right: 10%;    
     height:100%;
-    font:  78.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+    font:  100% Verdana, Helvetica, Arial, sans-serif;
     margin-top:80px;
     margin-left: 10%;
     padding-bottom: 25px;
@@ -236,7 +231,7 @@ ul.pagination li a.active {
 }
 .container-inicial-principal{
     height:100%;
-    font:  78.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+    font:  100% Verdana, Helvetica, Arial, sans-serif;
     margin-top:80px;
     padding-bottom: 25px;
     box-shadow: 0 0 10px #ccc;
@@ -246,21 +241,21 @@ ul.pagination li a.active {
 
 
 .container{
-    margin-right: auto;
-    
+    margin-right: auto;    
     height:100%;
-    font:  78.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+    font:  100% Verdana, Helvetica, Arial, sans-serif;
     margin-top:80px;
     margin-left: 20%;
     padding-bottom: 25px;
     box-shadow: 0 0 10px #ccc;  
+    /* padding-right: 0%;
+    padding-left: 0px; */
 }
 .container-header{
-    font: normal 18pt Arial;
+    font: normal 28pt Arial;
     background:rgb(31, 42, 54);
     padding:10px;
     color: white;
-    /* margin-bottom: 10px; */
 }
 .container-descricao{
     padding-left: 10px;
@@ -273,6 +268,7 @@ ul.pagination li a.active {
     padding: 10px;
     padding-left: 20px;
 }
+
 #conteudo {
     width: 100%;
     /* text-align: center; */
@@ -421,12 +417,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: .5rem;
 }
+
+#table-sale{
+    border: 1px solid #dee2e6;
+}
 .table {
     width: 100%;
     margin-bottom: 1rem;
     margin-top: 0.8rem;
     color: #212529;
+    font-size: 12px;
 }
+
 table {
     border-collapse: collapse;
 }
@@ -536,38 +538,14 @@ label {
 .modal-title{
     color: black;
 }
-.btn {
-    margin-right: 3px;
-    display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.btn-dark {
-    color: #fff;
-    background-color: #343a40;
-    border-color: #343a40;
-}
-.btn-secondary {
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
+
 #consultar-btn{
     margin-left: 82%;
     width: 200px;
-
 }
-
+.btn-table{
+    margin-left: 5px;
+}
 
 .sidebar-container {
     position: fixed;

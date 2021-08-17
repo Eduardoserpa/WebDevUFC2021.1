@@ -66,8 +66,8 @@ function criarTabela(data){
         });
         tr.append(
             '<td>' +         
-                '<button type="submit" class="btn btn-primary" onClick="excluirProduto()">Excluir</button>' +
-                '<button type="submit" class="btn btn-warning" onClick="editarProduto()">Editar</button>' +
+                '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirProduto()">Excluir</button>' +
+                '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarProduto()">Editar</button>' +
             '</td>'
         );
         table.append(tr);

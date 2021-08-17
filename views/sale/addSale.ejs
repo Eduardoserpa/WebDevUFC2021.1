@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <%- contentFor('secao2') %>
-    <div>
+    <div class="page">
         <div class="row header">
             <nav class="gn-menu-wrapper">
                 <div class="gn-scroller">
@@ -72,11 +72,11 @@
                     <label>Para realizar uma nova venda, insira os produtos, suas quantidades e clique em FINALIZAR VENDA</label>       
                 </div>
                 <div class="container-filtro">
-                    <div class="title-container">
+                    <!-- <div class="title-container">
                         <label class="label-desc">
                             CÓDIGO VENDA:&nbsp;&nbsp;&nbsp;<b>1345</b>
                         </label> <br/>
-                    </div>
+                    </div> -->
                     <form onsubmit="return false">
                         <div class="form-group">                            
                             <div class="item-group">
@@ -86,63 +86,33 @@
                                     </div>
                                     <div class="col-1"></div>
                                     <div class="col-2">
-                                        <label for="quantidade" class="form-label">Quantidade</label>
+                                        <label for="quantidade">Quantidade</label>
                                         <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="0">
                                     </div>
                                 </div>
                             </div>    
                         </div>
-                        <button type="submit" class="btn btn-dark" id="add-produto">+ Adicionar</button>
+                        <button type="submit" class="btn btn-dark btn-lg" id="add-produto">+ Adicionar</button>
                     </form>
-                    <div id="my-container">
-                        <table class="table">
-                            <tr>
-                                <th>Produto</th>
-                                <th>Quantidade</th>
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- <div>                    
-                        <table class="table" style="width:100%; border: 1px solid black">
-                            <tr>
-                                <th>Item</th>
-                                <th>Quantidade</th>
-                                <th>Preço unitario</th>
-                                <th>Preço total</th>
-                            </tr>
-                            <tr>
-                                <td>143-Camisa Polo</td>
-                                <td>3</td>
-                                <td>25,00</td>
-                                <td>75,00</td>
-                                <th><button type="submit" class="btn btn-dark">+ remover</button></th>
-                            </tr>
-                            <tr>
-                                <td>155-Calça Jeans</td>
-                                <td>7</td>
-                                <td>52,00</td>
-                                <td>364,00</td>
-                                <th><button type="submit" class="btn btn-dark">+ remover</button></th>
-                            </tr>
-                            <tr>
-                                <td>166-Camisa Regata</td>
-                                <td>10</td>
-                                <td>18,00</td>
-                                <td>180,00</td>
-                                <th><button type="submit" class="btn btn-dark">+ remover</button></th>
-                            </tr>
-                        </table>
-                    </div> -->
-    
-                    <div> 
-                        <tr>Total venda</tr>
-                        <tr>20 items</tr>
-                        <tr>619,00</tr>
-                    </div>
-    
-                    <div>
-                        <button type="submit" class="btn btn-dark" onclick="postSale()">Finalizar Venda</button>
-                        <button type="submit" class="btn btn-dark">Cancelar Venda</button>
+                    <div class="row" id="my-container">
+                        <div class="col-8">
+                            <table class="table" id="table-sale">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Quantidade</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>    
+                    <div class="row" style="margin: 15px;">
+                        <div class="col-md-1 offset-md-6">
+                            <button type="submit" class="btn btn-dark btn-lg">Cancelar</button>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="postSale()">Finalizar</button>
+                        </div>
                      </div>
                 </div>
             </div>

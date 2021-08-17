@@ -152,7 +152,9 @@ img {
 .produto ul {
     overflow: auto; 
 }
-
+#table-sale{
+    border: 1px solid #dee2e6;
+}
 .table{
     width:100%; 
     /* border: 0.5px solid black; */
@@ -544,21 +546,6 @@ label {
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
 .btn-dark {
     color: #fff;
     background-color: #343a40;
@@ -573,6 +560,9 @@ label {
     margin-left: 82%;
     width: 200px;
 
+}
+.btn-table{
+    margin-left: 5px;
 }
 
 
