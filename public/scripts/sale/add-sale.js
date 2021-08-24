@@ -15,13 +15,11 @@ $( "#add-produto").click(function() {
                 exist = true;
             }
         });
-
         if(!exist){ array.push(data); }
         console.log(array);
         addTabela(array);
     }
 });
-
 
 function validaForm(data){
     if(!data.product || !data.quantidade){
@@ -31,6 +29,13 @@ function validaForm(data){
         return true;
     }
 }
+
+$( "#cancelar" ).click(function() {
+    $("#table-sale tbody").remove(); 
+    $('#produto').val('');
+    $('#quantidade').val('');
+    array = [];
+})
 
 function addTabela(array){
     $("#table-sale tbody").remove(); 
@@ -45,6 +50,7 @@ function addTabela(array){
     });
     table.append(tbody);  
 }
+
 function postSale() {
     var uri = `http://localhost:3000/sale/`;
     if(array.length !== 0){

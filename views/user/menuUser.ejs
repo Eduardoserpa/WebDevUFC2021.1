@@ -1,7 +1,8 @@
 <%- contentFor('secao1') %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%- contentFor('secao2') %>
+    <div class="page">
         <div class="row header">
             <nav class="gn-menu-wrapper">
                 <div class="gn-scroller">
@@ -14,27 +15,22 @@
                                 <img src="../../imagens/icones/image 9.png" width="30" height="30" alt="" title="Home"/></a>
                             Home
                         </h3><br/>                
-                        
-                        <% if(user==='admin'){ %>
                         <h3 class="link-titulo" onclick="location.href='/menuUser'">
                             <a rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
-                        
                             Usuário
                         </h3>
                         <ul class="box">
                             <li><a href="/menuUser">Lista de Usuários</a></li>
-                        </ul>              
-                        <% }%>
+                        </ul>                
                         <h3 class="link-titulo" onclick="location.href='/listSale'">
                             <a href="/listSale" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 11.png" width="30" height="30" alt="" title="Usuario"/></a>
-                                
                             Vendas
                         </h3>
                         <ul class="box">					
                             <li><a href="/listSale">Lista de Vendas</a></li> 			
-                            <li><a href="#">Cadastro de Vendas</a></li> 			
+                            <li><a href="/addSale">Cadastro de Vendas</a></li> 			
                         </ul>                    
                         <h3 class="link-titulo" onclick="location.href='/listProduct'">
                             <a href="/listProduct" rel="lightbox" title="Imagem 6">
@@ -43,7 +39,7 @@
                         </h3>
                         <ul class="box">
                             <li><a href="/listProduct">Lista de Estoque</a></li>
-                            <li><a href="#">Cadastro de Produtos</a></li>
+                            <li><a href="/addProduct">Cadastro de Produtos</a></li>
                         </ul>   
                         <h3 class="link-titulo" onclick="location.href='/myProfile'">
                             <a href="/myProfile" rel="lightbox" title="Imagem 6">
@@ -60,8 +56,7 @@
                 <a href="" id="title-desc">Sobre a Loja</a>
             </div>
             <div class="col-1">
-                <button id = bnt-sair class="button-header" onclick="logout()" > Sair</button>
-                
+                <button class="button-header" onclick="window.location.replace('/login')" >Sair</button>
             </div>
         </div>
         <div>
@@ -89,6 +84,11 @@
                 </div>
             </div>
         </div>
-        <%- contentFor('secao3') %>    
+    </div>
+<%- contentFor('secao3') %>    
 <script type="text/javascript" src='scripts/user/menu-user.js'></script>
-
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -21,7 +21,9 @@
                             Usuário
                         </h3>
                         <ul class="box">
-                            <li><a href="/menuUser">Lista de Usuários</a></li>
+                            <li>
+                                <a href="/menuUser">Lista de Usuários</a>
+                            </li>
                         </ul>                
                         <h3 class="link-titulo" onclick="location.href='/listSale'">
                             <a href="/listSale" rel="lightbox" title="Imagem 6">
@@ -29,8 +31,8 @@
                             Vendas
                         </h3>
                         <ul class="box">					
-                            <li><a href="/listSale">Lista de Vendas</a></li> 			
-                            <li><a href="/addSale">Cadastro de Vendas</a></li> 			
+                            <li class="li-lateral"><a href="/listSale">Lista de Vendas</a></li> 			
+                            <li class="li-lateral"><a href="/addSale">Cadastro de Vendas</a></li> 			
                         </ul>                    
                         <h3 class="link-titulo" onclick="location.href='/listProduct'">
                             <a href="/listProduct" rel="lightbox" title="Imagem 6">
@@ -49,15 +51,6 @@
                     </ul>
                 </div>
             </nav>
-            <div class="col-5">
-                <a onclick="location.href='/'" id="title">VENDAS NOW</a>
-            </div>
-            <div class="col-5">
-                <a href="" id="title-desc">Sobre a Loja</a>
-            </div>
-            <div class="col-1">
-                <button class="button-header" onclick="window.location.replace('/login')" >Sair</button>
-            </div>
         </div>
         <div class="container">
             <div id="conteudo">
@@ -125,15 +118,15 @@
                 </div>
                 <div id="my-container">
                 </div>  
-                <div class="pagination">
-                    <ul class="pagination" >
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a class="active" href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
+                <div class="row pagination">
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-dark btn-lg" id="PreviousPage">«</button>
+                    </div>
+                    <div class="col-7 pagesbtn">
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-dark btn-lg" id="NextPage">»</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -76,15 +76,12 @@ h6{
     background-color: rgb(0, 0, 0);
     font: normal 15pt Arial;
     color: white;
-    padding-left: 60px;
+    /* padding-left: 60px; */
     padding-top: 25px;
     position: fixed;
     top: 0;
-    /* left: 0; */
-    /* height: 45px; */
-    /* width: 100%; */
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
+    position: fixed;
+    top: 0;
     width: 100%; 
 }
 .top-lateral{
@@ -109,28 +106,28 @@ h6{
     width: 100px;
 }
 
-a{
+/* a{
     color:white;
     margin-right: 15px;
-}
-a:hover{
+} */
+/* a:hover{
     color: rgb(218, 208, 208);
     text-decoration: underline red;
-}
-a:link {
+} */
+/* a:link {
     text-decoration:none;
 }
 a:visited {
     text-decoration:none;
-}
+} */
 
 #cliqueAdd{
     color: #555555;
 }
-#cliqueAdd:hover{
+/* #cliqueAdd:hover{
     color: #5555557c;
     text-decoration: underline #5555557c;
-}
+} */
 
 #caixa_mensagem{
     height: 110px;
@@ -168,8 +165,8 @@ ul.pagination {
 }
 ul.pagination li {display: inline;}
 ul.pagination li a {
-    color: black;
-    float: left;
+    /* color: black;
+    float: left; */
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 5px;
@@ -179,6 +176,27 @@ ul.pagination li a.active {
     color: white;
     border-radius: 5px;
 }
+
+li {
+    list-style-type: none;
+}
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    background-color: rgb(137, 178, 219);  
+  }
+
+  a:active {
+    text-decoration: none;
+  }
 
 
 
@@ -190,7 +208,6 @@ ul.pagination li a.active {
 #menu-lateral ul li {
     margin: 0; padding: 0px;
     border-bottom: 1px solid #CCC;
-    text-align: left;
     list-style-type: none;
 }
 #menu-lateral a:link {
@@ -239,6 +256,41 @@ ul.pagination li a.active {
     margin-right: 10%;
 }
 
+header {
+    display: block;
+}
+.bd-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1071;
+}
+.flex-md-row {
+    -webkit-box-orient: horizontal!important;
+    -webkit-box-direction: normal!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+}
+.navbar-expand {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+.navbar {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
 
 .container{
     margin-right: auto;    
@@ -351,8 +403,9 @@ left:-500px
 }
 #usuario-status{
     background:rgb(44,62,80);
-    padding-left: 5px;
-    vertical-align: middle;
+    padding-left: 0px;
+    margin-left: 0;
+    font-size: 1.8rem;
 }
 #menu {
     font-style:italic;
@@ -361,10 +414,7 @@ left:-500px
     margin:1em 0 1em -1em;
     padding:0;
 }
-#menu li {
-    padding:0; 
-    margin:0;
-}
+
 /* #menu li a,  #menu li a:link {
     font-size:1.0em;
     color:rgb(255,255,255);
@@ -656,6 +706,9 @@ label {
     height: 100%;
 }
 
+.disabled {
+    pointer-events: none;
+}
 .gn-menu-main, .gn-menu-main ul {
     margin: 0;
     padding: 0;
@@ -673,6 +726,7 @@ li {
 }
 .link-titulo{
     padding-top: 10px;
+    font-size: 2.0rem;
 }
 
 #verSenha1{

@@ -1,26 +1,72 @@
-$(document).ready(function(){
-    var uri = 'http://localhost:3000/sale/';  
+let NumeroLinhasPorPagina = 6;
+let IndexPagina = 1;
+
+$(document).ready(() => getSales());
+
+$("#PreviousPage").click(function() {
+    IndexPagina --;
+    getSales();
+});
+
+$("#NextPage").click(function() {
+    IndexPagina ++;
+    getSales();
+});
+
+function getSales(){
+    var uri = `http://localhost:3000/sale/${NumeroLinhasPorPagina}/${IndexPagina}`;  
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
     .then(response => response.text())
     .then(result => {
+        $("#list-sale").remove();
         criarTabela(result);
+        var array = JSON.parse(result);
+        var metadata = array.metadata;
+        $(".pagesbtn ul").remove();
+        criarPagination(metadata.pageIndex, metadata.pageCount, metadata.hasPreviousPage, metadata.hasNextPage);
     })
-    .catch(error => console.log('error', error));   
-  });
-  
+    .catch(error => console.log('error', error));
+}
+
+function criarPagination(pageIndex, pageCount, hasPreviousPage, hasNextPage){
+    $("#PreviousPage").prop('disabled', !hasPreviousPage);
+    $("#NextPage").prop('disabled', !hasNextPage);
+    
+    var pagination = $('.pagesbtn');
+    linha = $('<ul>').addClass('pagination');
+
+    var count = 1;
+    while(count <= pageCount){
+        var classe = '';
+        if(count == pageIndex){
+            classe = 'active';
+        }
+        var li = $('<li>');
+        li.append(`<a href="#" id="Page${count}">${count}</a>`)
+        .addClass(classe);
+        linha.append(li);        
+        count ++;
+    }
+    pagination.append(linha);
+}
+
 function criarTabela(data){
     var container = $('#my-container'),
-    table = $('<table>').addClass('table');
+    table = $('<table>').addClass('table').attr('id', 'list-sale');
+
+    var thead = $('<thead>');
     var tr_head = $('<tr>');
     tr_head.append('<th>' + 'Data' + '</th>');
     tr_head.append('<th>' + 'Cód Venda' + '</th>');
     tr_head.append('<th>' + 'Vendedor' + '</th>');
     tr_head.append('<th>' + 'Valor da Venda' + '</th>');
     tr_head.append('<th>' + 'Ações' + '</th>');
-    table.append(tr_head);
+    thead.append(tr_head);
+    table.append(thead);
   
+    var tbody = $('<tbody>');
     var array = JSON.parse(data);
-    array.forEach(function(user) {
+    array.sales.forEach(function(user) {
         var tr = $('<tr>');
         var valorVenda = 0;
         user.products.forEach((produto) => {
@@ -45,15 +91,16 @@ function criarTabela(data){
                 '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarProduto()">Editar</button>' +
             '</td>'
         );     
-        table.append(tr);
+        tbody.append(tr);
     });
+    table.append(tbody);
     container.append(table);
 }
 
 function dataAtualFormatada(data){
     var dia  = data.getDate().toString(),
         diaF = (dia.length == 1) ? '0'+dia : dia,
-        mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mes  = (data.getMonth()+1).toString(),
         mesF = (mes.length == 1) ? '0'+mes : mes,
         anoF = data.getFullYear();
     return diaF+"/"+mesF+"/"+anoF;

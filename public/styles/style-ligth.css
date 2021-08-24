@@ -564,7 +564,9 @@ label {
 .btn-table{
     margin-left: 5px;
 }
-
+.disabled {
+    pointer-events: none;
+}
 
 .sidebar-container {
     position: fixed;

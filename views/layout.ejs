@@ -12,7 +12,30 @@
 <body>
     <%- secao1 %>
     <div class="page">
-        
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="col-5">
+                <a class="navbar-brand" onclick="location.href='/'" id="title">VENDAS NOW</a>
+            </div>
+            <div class="col-5">
+                <a class="navbar-brand" href="" id="title-desc">Sobre a Loja</a>
+            </div>
+            <div class="col-1">
+                <button class="navbar-brand button-header" onclick="window.location.replace('/login')" >Sair</button>
+            </div>
+        </nav>
+          
+        <!-- <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+            <div class="col-5">
+                <a onclick="location.href='/'" id="title">VENDAS NOW</a>
+            </div>
+            <div class="col-5">
+                <a href="" id="title-desc">Sobre a Loja</a>
+            </div>
+            <div class="col-1">
+                <button class="button-header" onclick="window.location.replace('/login')" >Sair</button>
+            </div>
+        </header> -->
+
         <%- secao2 %>
         <hr class="line" />
         
