@@ -1,13 +1,61 @@
-$(document).ready(function(){
-    var uri = 'http://localhost:3000/product/';  
+let NumeroLinhasPorPagina = 6;
+let IndexPagina = 1;
+
+$(document).ready(() => getProducts(`http://localhost:3000/product/${NumeroLinhasPorPagina}/${IndexPagina}`));
+$("#PreviousPage").click(function() {
+    IndexPagina --;
+    var uri = `http://localhost:3000/product/${NumeroLinhasPorPagina}/${IndexPagina}`;
+    getProducts(uri);
+});
+$("#NextPage").click(function() {
+    IndexPagina ++;
+    var uri = `http://localhost:3000/product/${NumeroLinhasPorPagina}/${IndexPagina}`;
+    getProducts(uri);
+});
+
+$("#consultar-btn").click(function() {
+    var produto = $('#produto').val();
+    var categoria = $('#categoria').val();
+    var uri = `http://localhost:3000/product/`;
+
+    if(produto) uri += `?produto=${produto.split(" ")[2]}`;
+    if(categoria) uri += `?categoria=${categoria}`;
+
+    getProducts(uri);
+});
+
+function getProducts(uri){
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
     .then(response => response.text())
     .then(result => {
+        $("#list-product").remove();
         criarTabela(result);
+        var array = JSON.parse(result);
+        var metadata = array.metadata;
+        $(".pagesbtn ul").remove();
+        criarPagination(metadata.pageIndex, metadata.pageCount, metadata.hasPreviousPage, metadata.hasNextPage);
     })
     .catch(error => console.log('error', error));
-});
-
+}
+function criarPagination(pageIndex, pageCount, hasPreviousPage, hasNextPage){
+    $("#PreviousPage").prop('disabled', !hasPreviousPage);
+    $("#NextPage").prop('disabled', !hasNextPage);    
+    var pagination = $('.pagesbtn');
+    linha = $('<ul>').addClass('pagination');
+    var count = 1;
+    while(count <= pageCount){
+        var classe = '';
+        if(count == pageIndex){
+            classe = 'active';
+        }
+        var li = $('<li>');
+        li.append(`<a href="#" id="Page${count}">${count}</a>`)
+        .addClass(classe);
+        linha.append(li);        
+        count ++;
+    }
+    pagination.append(linha);
+}
 function editarProduto(){
     var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
     sessionStorage.setItem('id-editar',id);
@@ -45,7 +93,7 @@ $('#modal-comp').on('hidden.bs.modal', function () {
 
 function criarTabela(data){
     var container = $('#my-container'),
-    table = $('<table>').addClass('table');
+    table = $('<table>').addClass('table').attr('id', 'list-product');;
     var tr_head = $('<tr>');
     tr_head.append('<th>' + 'Código' + '</th>');
     tr_head.append('<th>' + 'Produto' + '</th>');
@@ -57,7 +105,7 @@ function criarTabela(data){
     table.append(tr_head);
   
     var array = JSON.parse(data);
-    array.forEach(function(user) {
+    array.products.forEach(function(user) {
         var tr = $('<tr>');
         var valorTotal = user.estoque * user.valor;
         user.total = valorTotal;        

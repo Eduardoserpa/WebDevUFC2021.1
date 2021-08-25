@@ -2,12 +2,10 @@ let NumeroLinhasPorPagina = 6;
 let IndexPagina = 1;
 
 $(document).ready(() => getSales());
-
 $("#PreviousPage").click(function() {
     IndexPagina --;
     getSales();
 });
-
 $("#NextPage").click(function() {
     IndexPagina ++;
     getSales();
@@ -30,11 +28,9 @@ function getSales(){
 
 function criarPagination(pageIndex, pageCount, hasPreviousPage, hasNextPage){
     $("#PreviousPage").prop('disabled', !hasPreviousPage);
-    $("#NextPage").prop('disabled', !hasNextPage);
-    
+    $("#NextPage").prop('disabled', !hasNextPage);    
     var pagination = $('.pagesbtn');
     linha = $('<ul>').addClass('pagination');
-
     var count = 1;
     while(count <= pageCount){
         var classe = '';
@@ -44,7 +40,7 @@ function criarPagination(pageIndex, pageCount, hasPreviousPage, hasNextPage){
         var li = $('<li>');
         li.append(`<a href="#" id="Page${count}">${count}</a>`)
         .addClass(classe);
-        linha.append(li);        
+        linha.append(li);
         count ++;
     }
     pagination.append(linha);

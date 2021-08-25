@@ -111,16 +111,16 @@
                 </div>
                 <div id="my-container">
                 </div>                
-                <!-- <div class="pagination">
-                    <ul class="pagination" >
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a class="active" href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div> -->
+                <div class="row pagination">
+                    <div class="pageElement">
+                        <button type="submit" class="btn btn-dark btn-lg" id="PreviousPage">«</button>
+                    </div>
+                    <div class="pagesbtn">
+                    </div>
+                    <div class="pageElement">
+                        <button type="submit" class="btn btn-dark btn-lg" id="NextPage">»</button>
+                    </div>
+                </div>
             </div>
         </div>
             <%- include('../components/modal.ejs', {title:'Produto', body: 'Produto excluido com sucesso'}); %> 

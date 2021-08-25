@@ -67,6 +67,8 @@ h6{
 }
 #title-desc{
     color: white;
+    font-size: 16px;
+    align-items: center;
 }
 .main{
     padding: 20px;
@@ -89,7 +91,7 @@ h6{
     padding-top: 25px;
 }
 #title{
-    font: normal 22pt Arial;
+    font: normal 20pt Arial;
     color: white;
 }
 .button-header {
@@ -97,9 +99,7 @@ h6{
     border-radius: 6px;
     color:white;
     padding: 5px;
-    width: 80px;
     font: normal 11pt Arial;
-
 }
 
 .vendas_now{
@@ -150,13 +150,17 @@ img {
 .produto ul {
     overflow: auto; 
 }
-
 .table-totais{
     background-color: black;
     color: white;
 }
 div.pagination{
     float: right;
+    margin-right: 10px;
+}
+.pageElement{
+    padding-left: 6px;
+    padding-right: 6px;
 }
 ul.pagination {
     display: inline-block;
@@ -183,22 +187,20 @@ li {
 
 a:link {
     text-decoration: none;
-  }
-  
-  a:visited {
+}
+
+a:visited {
     text-decoration: none;
-  }
+}
   
-  a:hover {
+li a:hover {
     text-decoration: none;
     background-color: rgb(137, 178, 219);  
-  }
+}
 
-  a:active {
+a:active {
     text-decoration: none;
-  }
-
-
+}
 
 #menu-lateral {
     width: 30%;
