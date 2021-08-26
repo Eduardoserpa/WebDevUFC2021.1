@@ -73,3 +73,9 @@ function deleteUser() {
 $('#modal-comp').on('hidden.bs.modal', function () {
     window.location.reload();
 });
+
+function editarUser(){
+    var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
+    sessionStorage.setItem('id-editar-user',id);
+    window.location.replace('/editUser?id=' + id);
+}
