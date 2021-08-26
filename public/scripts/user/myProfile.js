@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   var session = sessionStorage.getItem('id');
   var uri = 'http://localhost:3000/user/' + session;
@@ -35,6 +34,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $( "#btn-salvar" ).click(function() {
+
   var id = sessionStorage.getItem('id');
   var uri = `http://localhost:3000/user/${id}`;  
   
@@ -65,3 +65,4 @@ $( "#btn-salvar" ).click(function() {
     }
   }
 });
+

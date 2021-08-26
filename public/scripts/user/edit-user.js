@@ -9,8 +9,8 @@ $(document).ready(function(){
         var resp = JSON.parse(result); 
         $('#nome').val(resp.nome);
         $('#perfil').val(resp.tipo);
-        
-        $('#email').val(resp.email);
+        var label_email = $('#email');
+        label_email.append(resp.email);
       })
       .catch(error => console.log('error', error));
     }

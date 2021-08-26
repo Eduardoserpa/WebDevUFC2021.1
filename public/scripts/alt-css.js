@@ -42,6 +42,7 @@ function changeCSS(cssFile, cssLinkIndex) {
 }
 
 function logout(){
+  
   document.cookie = 'user= ;'
   window.location.replace('/login')
 }
