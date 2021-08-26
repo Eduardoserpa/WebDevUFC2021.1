@@ -97,7 +97,15 @@
                                 <div class="row">
                                     <div class="col-5">
                                         <label for="perfil" class="form-label">Perfil:&nbsp;&nbsp;</label> 
-                                        <input type="text" class="form-control-inline" id="perfil" name="perfil" aria-describedby="emailHelp" placeholder="Admin">                             
+                                     <!--   <input type="text" class="form-control-inline" id="perfil" name="perfil" aria-describedby="emailHelp" placeholder="Informe o perfil desejado"
+                                        >-->
+                                        <select name="Perfil" id="perfil" name="perfil">
+                                            <option value="admin">admin</option>
+                                            <option value="gerente">gerente</option>
+                                            <option value="vendedor">vendedor</option>
+                                            
+                                         </select>
+                                                                     
                                     </div>
                                 </div>
                             </div>
@@ -113,8 +121,9 @@
                             <div class="item-group">
                                 <div class="row">
                                     <div class="col-5">
-                                        <label for="senha" class="form-label">Senha</label>
-                                        <input type="password" class="form-control" id="senha" name="senha">                          
+                                        <label for="senha1" class="form-label">Senha</label>
+                                        <input type="password" class="form-control" id="senha1" name="senha1">
+                                        <p id="verSenha1"></p>                          
                                     </div>
                                 </div>
                             </div>
@@ -122,11 +131,18 @@
                                 <div class="row">
                                     <div class="col-5">
                                         <label for="senha2" class="form-label">Repita a sua senha</label>
-                                        <input type="password" class="form-control" id="senha2" name="senha2">                             
+                                        <input type="password" class="form-control" id="senha2" name="senha2">
+                                        <p id="verSenha2"></p>                             
                                     </div>
                                 </div>
                             </div>
+                            <div>
+                                <p>DESEJA MUDAR A SENHA? PREENCHA OS CAMPOS SENHA E CONFIRMAÇÃO DE SENHA LOGO ABAIXO. 
+                                    <br>
+                                    Importante: a nova senha precisa ter no mínimo 6.</p>
+                            </div>
                         </div>
+                        
                     
                             <button type="submit" class="btn btn-dark" id="btn-gravar" onclick="putUser()">CONFIRMAR</button>
                             <button type="submit" class="btn btn-dark" onclick="window.location.replace('/menuUser')" >CANCELAR</button>

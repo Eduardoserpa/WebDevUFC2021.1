@@ -19,33 +19,86 @@ $(document).ready(function(){
     var nome = $('#nome').val();
     var tipo = $('#perfil').val();
     var email = $('#email').val();
-    var data = JSON.stringify({
-      "nome": nome,
-      "tipo": tipo,
-      "email": email
-    });
-    var req = new XMLHttpRequest();
-    req.addEventListener("readystatechange", function() {
-    if(this.readyState === 4) {
-        new Promise(() =>{
-          $('#modal-comp').modal('show');
-        });
+    var senha1 = $('#senha1').val();
+    var senha2 = $('#senha2').val();
+
+    if(senha1 === '' && senha2 ===''){
+      var data = JSON.stringify({
+        "nome": nome,
+        "tipo": tipo,
+        "email": email
+      });
+      var req = new XMLHttpRequest();
+      req.addEventListener("readystatechange", function() {
+      if(this.readyState === 4) {
+          new Promise(() =>{
+            $('#modal-comp').modal('show');
+          });
+        }
+      });
+      var idUrl = getUrlParameter('id');
+      if(idUrl){
+        req.open('PUT',uri + idUrl,false);
+        req.setRequestHeader("Content-Type", "application/json"); 
+        req.setRequestHeader('Access-Control-Allow-Origin', '*');
+        req.setRequestHeader('Accept', '*/*');    
+        req.send(data);
+      }else{
+        req.open('POST',uri,false);
+        req.setRequestHeader("Content-Type", "application/json"); 
+        req.setRequestHeader('Access-Control-Allow-Origin', '*');
+        req.setRequestHeader('Accept', '*/*');    
+        req.send(data);
       }
-    });
-    var idUrl = getUrlParameter('id');
-    if(idUrl){
-      req.open('PUT',uri + idUrl,false);
-      req.setRequestHeader("Content-Type", "application/json"); 
-      req.setRequestHeader('Access-Control-Allow-Origin', '*');
-      req.setRequestHeader('Accept', '*/*');    
-      req.send(data);
+
     }else{
-      req.open('POST',uri,false);
-      req.setRequestHeader("Content-Type", "application/json"); 
-      req.setRequestHeader('Access-Control-Allow-Origin', '*');
-      req.setRequestHeader('Accept', '*/*');    
-      req.send(data);
+      let textoSenha1 = document.getElementById('verSenha1');
+      let textoSenha2 = document.getElementById('verSenha2');
+      if(senha1.length < 6){
+        
+        textoSenha1.innerText = `A senha deve possuir no mínimo 6 caracteres.`;
+        
+      }else{
+        textoSenha1.innerText = ``
+        if(senha1 !== senha2){
+          textoSenha2.innerText = `As senhas devem ser as mesmas!`;
+        }
+        else{
+          textoSenha2.innerText = ``;
+          var data = JSON.stringify({
+            "nome": nome,
+            "tipo": tipo,
+            "email": email,
+            "senha" : senha1
+          });
+          var req = new XMLHttpRequest();
+          req.addEventListener("readystatechange", function() {
+          if(this.readyState === 4) {
+              new Promise(() =>{
+                $('#modal-comp').modal('show');
+              });
+            }
+          });
+          var idUrl = getUrlParameter('id');
+          if(idUrl){
+            req.open('PUT',uri + idUrl,false);
+            req.setRequestHeader("Content-Type", "application/json"); 
+            req.setRequestHeader('Access-Control-Allow-Origin', '*');
+            req.setRequestHeader('Accept', '*/*');    
+            req.send(data);
+          }else{
+            req.open('POST',uri,false);
+            req.setRequestHeader("Content-Type", "application/json"); 
+            req.setRequestHeader('Access-Control-Allow-Origin', '*');
+            req.setRequestHeader('Accept', '*/*');    
+            req.send(data);
+          }
+          
+        }
+
+      }
     }
+
   }
   
   $('#modal-comp').on('hidden.bs.modal',function() {  
