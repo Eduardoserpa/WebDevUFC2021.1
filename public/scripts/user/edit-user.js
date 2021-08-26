@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     var idUrl = getUrlParameter('id');
     if(idUrl){
       var uri = `http://localhost:3000/user/${idUrl}`;  
@@ -8,6 +9,7 @@ $(document).ready(function(){
         var resp = JSON.parse(result); 
         $('#nome').val(resp.nome);
         $('#perfil').val(resp.tipo);
+        
         $('#email').val(resp.email);
       })
       .catch(error => console.log('error', error));

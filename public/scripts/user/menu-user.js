@@ -16,7 +16,6 @@ function criarTabela(data) {
     tr_head.append('<th>' + 'Código' + '</th>');
     tr_head.append('<th>' + 'Nome' + '</th>');
     tr_head.append('<th>' + 'Função' + '</th>');
-    tr_head.append('<th>' + 'Código' + '</th>');
     tr_head.append('<th>' + 'Email' + '</th>');
     tr_head.append('<th>' + 'Ações' + '</th>');
     table.append(tr_head);
@@ -24,7 +23,7 @@ function criarTabela(data) {
     var array = JSON.parse(data);
     array.forEach(function (user) {
         var tr = $('<tr>');
-        ['_id','nome', 'tipo', '_id', 'email'].forEach(function (attr) {
+        ['_id','nome', 'tipo', 'email'].forEach(function (attr) {
             tr.append('<td>' + user[attr] + '</td>');
         });
         tr.append(
