@@ -158,6 +158,12 @@ div.pagination{
     float: right;
     margin-right: 10px;
 }
+
+.btn-header{
+    float: right;
+    margin-top: 10px;
+}
+
 .pageElement{
     padding-left: 6px;
     padding-right: 6px;
