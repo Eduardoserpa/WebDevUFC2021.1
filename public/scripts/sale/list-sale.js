@@ -66,7 +66,10 @@ function criarTabela(data){
         var tr = $('<tr>');
         var valorVenda = 0;
         user.products.forEach((produto) => {
-            valorVenda += produto.product.valor * produto.quantidade;
+            console.log(produto)
+            if(produto.product){
+                valorVenda += produto.product.valor * produto.quantidade;
+            }
         });
 
         [ 'date', '_id', 'user', 'valor'].forEach(function(attr) {
