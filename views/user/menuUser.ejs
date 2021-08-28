@@ -15,14 +15,16 @@
                                 <img src="../../imagens/icones/image 9.png" width="30" height="30" alt="" title="Home"/></a>
                             Home
                         </h3><br/>                
-                        <h3 class="link-titulo" onclick="location.href='/menuUser'">
-                            <a rel="lightbox" title="Imagem 6">
-                                <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
-                            Usuário
-                        </h3>
-                        <ul class="box">
-                            <li><a href="/menuUser">Lista de Usuários</a></li>
-                        </ul>                
+                        <% if(user==='admin'){ %>
+                            <h3 class="link-titulo" onclick="location.href='/menuUser'">
+                                <a rel="lightbox" title="Imagem 6">
+                                    <img src="../../imagens/icones/image 10.png" width="30" height="30" alt="" title="Usuario"/></a>
+                                Usuário
+                            </h3>
+                            <ul class="box">
+                                <li><a href="/menuUser">Lista de Usuários</a></li>
+                            </ul>              
+                            <% }%>                
                         <h3 class="link-titulo" onclick="location.href='/listSale'">
                             <a href="/listSale" rel="lightbox" title="Imagem 6">
                                 <img src="../../imagens/icones/image 11.png" width="30" height="30" alt="" title="Usuario"/></a>
@@ -39,7 +41,9 @@
                         </h3>
                         <ul class="box">
                             <li><a href="/listProduct">Lista de Estoque</a></li>
+                            <% if(user!=='vendedor'){ %>
                             <li><a href="/addProduct">Cadastro de Produtos</a></li>
+                            <% } %>
                         </ul>   
                         <h3 class="link-titulo" onclick="location.href='/myProfile'">
                             <a href="/myProfile" rel="lightbox" title="Imagem 6">
@@ -80,6 +84,29 @@
             </div>
         </div>
     </div>
+    <%- include('../components/modal.ejs', {title:'Usuario', body: 'Usuário excluido com sucesso'}); %> 
+    <!-- Modal -->
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label id="loginHelp" class="form-text text-muted">
+                        Deseja realmente excluir o usuário?
+                    </label>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="deleteUser()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <%- contentFor('secao3') %>    
 <script type="text/javascript" src='scripts/user/menu-user.js'></script>
 <!-- Optional JavaScript -->

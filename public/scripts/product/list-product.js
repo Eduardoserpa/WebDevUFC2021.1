@@ -113,9 +113,9 @@ function criarTabela(data){
             tr.append('<td>' + user[attr] + '</td>');
         });
         tr.append(
-            '<td>' +         
-                '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirProduto()">Excluir</button>' +
+            '<td>' +                     
                 '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarProduto()">Editar</button>' +
+                '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirProduto()">Excluir</button>' +
             '</td>'
         );
         table.append(tr);
