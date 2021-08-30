@@ -59,7 +59,7 @@
                 <button class="button-header" onclick="window.location.replace('/login')" >Sair</button>
             </div>
         </div>
-        <div class="container">
+        <div class="container-box">
             <div id="conteudo">
                 <div class="container-header">
                     <div class="row">
@@ -103,16 +103,18 @@
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    <!-- <div>
+                                    <div>
                                         <div class="row foto-label">
-                                            <label>Foto do Produto</label>
+                                            <label class="form-label">Foto do Produto</label>
                                         </div>
-
-                                        <div class="row">  
+                                        <form action="/" method="post" enctype="multipart/form-data">
+                                            <input type="file" name="photos" id='file'>
+                                        </form>
+                                        <!-- <div class="row">  
                                             <img src="../../imagens/vendas/image 21.png" width="325" height="239" alt=""/>
                                             <br />
-                                        </div>                
-                                    </div> -->
+                                        </div>                 -->
+                                    </div>
                                 </div>
                             </div>
                         </div>                    

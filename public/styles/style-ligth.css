@@ -171,6 +171,7 @@ div.pagination{
 .btn-header{
     float: right;
     margin-top: 10px;
+    padding-right: 20px;
 }
 .pageElement{
     padding-left: 6px;
@@ -270,16 +271,15 @@ a:active {
     color: rgb(255,255,255);
 }
 
-
-.container{
-    margin-right: auto;
-    
+.container-box{
+    margin-right: auto;    
     height:100%;
-    font:  78.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+    font:  100% Verdana, Helvetica, Arial, sans-serif;
     margin-top:80px;
     margin-left: 20%;
-    padding-bottom: 25px;
-    box-shadow: 0 0 10px #ccc;  
+    margin-right:5%;
+    padding-bottom: 50px;
+    box-shadow: 0 0 10px #ccc;
 }
 .container-header{
     background:rgb(31, 42, 54);

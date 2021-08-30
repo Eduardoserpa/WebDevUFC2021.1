@@ -55,8 +55,14 @@
                 </div>
             </div>
         </div>
+        <%- include('components/modal.ejs', 
+            {
+                title:'Usuário e/ou senha inválidos', 
+                body: 'Tente novamente ou procure o gerente para realizar o seu cadastro no sistema.'
+            }); 
+        %> 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
+        <!-- <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">          
                 <div class="modal-content"> 
                     <div class="modal-header">
@@ -74,7 +80,7 @@
                     </div>
                 </div>            
             </div>
-        </div>
+        </div> -->
     </div>   
 <%- contentFor('secao3') %>    
 <script type="text/javascript" src='scripts/user/login.js'></script>

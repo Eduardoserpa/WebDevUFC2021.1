@@ -162,6 +162,7 @@ div.pagination{
 .btn-header{
     float: right;
     margin-top: 10px;
+    padding-right: 20px;
 }
 
 .pageElement{
@@ -300,13 +301,14 @@ header {
     padding: .5rem 1rem;
 }
 
-.container{
+.container-box{
     margin-right: auto;    
     height:100%;
     font:  100% Verdana, Helvetica, Arial, sans-serif;
     margin-top:80px;
     margin-left: 20%;
-    padding-bottom: 25px;
+    margin-right:5%;
+    padding-bottom: 50px;
     box-shadow: 0 0 10px #ccc;  
     /* padding-right: 0%;
     padding-left: 0px; */

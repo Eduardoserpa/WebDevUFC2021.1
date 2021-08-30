@@ -19,7 +19,8 @@ function postLogin(email, senha) {
             window.location.replace("/myProfile");
         }
         else{
-            $('#myModal').modal('show');
+            // $('#myModal').modal('show');
+            $('#modal-comp').modal('show');
         }
     })
     .catch(error => $('#myModal').modal('show'));

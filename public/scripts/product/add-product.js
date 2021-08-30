@@ -16,6 +16,27 @@ $(document).ready(function(){
   }
 });
 
+// $('#btn-gravar').click(function() {
+//   var file = $('#file')[0].files[0];
+//   const data = new FormData();
+//   data.append('image', file);
+
+//   var req = new XMLHttpRequest();
+//   req.addEventListener("readystatechange", function() {
+//   if(this.readyState === 4) {
+//       new Promise(() =>{
+//         //$('#modal-comp').modal('show');
+//         console.log('POST SUCCESS');
+//       });
+//     }
+//   });
+
+//   req.open('POST','http://localhost:3000/product/image',false);
+//   req.setRequestHeader('Access-Control-Allow-Origin', '*');
+//   req.setRequestHeader('Accept', '*/*');    
+//   req.send(data);
+// });
+
 function postProduct() {
   var uri = `http://localhost:3000/product/`;
   var nome = $('#nome').val();
@@ -50,7 +71,7 @@ function postProduct() {
     req.setRequestHeader('Accept', '*/*');    
     req.send(data);
   }
-}
+};
 
 $('#modal-comp').on('hidden.bs.modal',function() {  
   window.location.reload();
