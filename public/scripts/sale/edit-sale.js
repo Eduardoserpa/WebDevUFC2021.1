@@ -1,44 +1,54 @@
-//Pending writing
-$(document).ready(function(){
+function putSale() {
+    var uri = `http://localhost:3000/sale/`;
 
-    var uri = 'http://localhost:3000/sale/';
-  
-    fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
-    .then(response => response.text())
-    .then(result => {
-        criarTabela(result);
-    })
-    .catch(error => console.log('error', error));
-});
+    var user = $('#user').val();
+    var date = $('#date').val();
+    var id = $('#_id').val();
+    var products = $('#products').val();
+    uri.append(id);
+    window.alert(uri);
 
-
-function criarTabela(data){
-    var container = $('#my-container'),
-    table = $('<table>').addClass('table');
-    var tr_head = $('<tr>');
-    tr_head.append('<th>' + 'Data' + '</th>');
-    tr_head.append('<th>' + 'Cód Venda' + '</th>');
-    tr_head.append('<th>' + 'Vendedor' + '</th>');
-    tr_head.append('<th>' + 'Valor da Venda' + '</th>');
-    tr_head.append('<th>' + 'Ações' + '</th>');
-    table.append(tr_head);
-  
-    var array = JSON.parse(data);
-    array.forEach(function(user) {
-        var tr = $('<tr>');
-        [ 'nome', 'categoria', 'estoque', 'valor','estoque'*'valor'].forEach(function(attr) {
-            tr.append('<td>' + user[attr] + '</td>');
-        });
-        tr.append(
-            '<td>' + 
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/edit-solid.svg" width="20" height="20" alt="" title="Editar" /></a>' +
-                '<a rel="lightbox" title="Imagem 6">' +
-                    '<img src="../../imagens/icones/trash-solid.svg" width="20" height="20" alt="" title="Excluir" /></a>' + 
-            '</td>'
-        );      
-        table.append(tr);
+    var data = JSON.stringify({
+        "user": user,
+        "date": date,
+        "products": products
     });
-  
-    container.append(table);
+    var req = new XMLHttpRequest();
+    req.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+        console.log(this.responseText);
+        new Promise(() =>{
+            console.log('promise');
+            var modal = $('#modal-comp');
+            modal.modal('show');
+        });    }
+    });
+    req.open("PUT",uri,false);
+    req.setRequestHeader("Content-Type", "application/json"); 
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
+    req.setRequestHeader('Accept', '*/*');    
+    req.send(data);
+}
+
+function deleteSale() {
+    var uri = `http://localhost:3000/sale/`;
+    var id = $('#_id').val();
+    uri.append(id);
+    window.alert(uri);
+
+    var req = new XMLHttpRequest();
+    req.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+        console.log(this.responseText);
+        new Promise(() =>{
+            console.log('promise');
+            var modal = $('#modal-comp');
+            modal.modal('show');
+        });    }
+    });
+    req.open("DELETE",uri,false);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
+    req.setRequestHeader('Accept', '*/*');
+    /*req.send(data);*/
 }
