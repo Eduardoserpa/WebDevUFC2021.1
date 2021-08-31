@@ -103,42 +103,30 @@
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    <div>
-                                        <div class="row foto-label">
+                                    <div class="item-group">
+                                        <div class="row">
                                             <label for="nome">Foto do Produto</label>
-                                        </div>
-                                        <form class="mt-4"
-                                            method="POST"
-                                            enctype="multipart/form-data"
-                                        >
-                                            <div class="form-group">
                                             <input
                                                 type="file"
                                                 name="file"
                                                 id="file"
                                                 class="form-control-file border"
                                             />
-                                            </div>
-                                            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                                        </form>
-                                        <!-- <form action="/" method="post" enctype="multipart/form-data">
-                                            <input type="file" name="photos" id='file'>
-                                        </form> -->
-                                        <!-- <div class="row">  
-                                            <img src="../../imagens/vendas/image 21.png" width="325" height="239" alt=""/>
-                                            <br />
-                                        </div>                 -->
+                                        </div>
+                                        <div id="img-container">
+                                            <img id="preview" src="" height="270">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>                    
                         <div>
-                            <button type="submit" class="btn btn-dark" id="btn-gravar" onclick="postProduct()">CONFIRMAR</button>
+                            <button type="submit" class="btn btn-dark" id="btn-gravar">CONFIRMAR</button>
                             <button type="submit" class="btn btn-dark">CANCELAR</button>
                         </div>
                     </form>
                 </div>
-                <%- include('../components/modal.ejs', {title:'Produto', body: 'Produto cadastrado com sucesso'}); %> 
+                <%- include('../components/modal.ejs', {title: 'Produto', body: 'Produto cadastrado com sucesso'}); %> 
             </div>
         </div>
     </div>

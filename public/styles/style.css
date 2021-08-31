@@ -564,6 +564,16 @@ label {
 .foto-label{
     padding-left: 28%;
 }
+#img-container{
+    box-shadow: 0 0 10px #ccc;  
+    padding: 5px;
+    margin-top: 10px;
+}
+#preview {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* .form-control {
     display: block;
     width: 100%;
