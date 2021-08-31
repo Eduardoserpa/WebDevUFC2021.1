@@ -1,79 +1,68 @@
-array = [];
-
-$( "#add-produto").click(function() {
-    var produto = $('#produto').val();
-    var quantidade = $('#quantidade').val();
-    var data = { 
-        product: produto.split(" ")[0], 
-        quantidade: parseInt(quantidade) 
-    };
-    if(validaForm(data)){
-        var exist = false;
-        array.forEach(element => {
-            if(element.product == data.product){
-                element.quantidade += data.quantidade;
-                exist = true;
-            }
-        });
-        if(!exist){ array.push(data); }
-        console.log(array);
-        addTabela(array);
+$(document).ready(function(){
+    var idUrl = getUrlParameter('id');
+    if(idUrl){
+      $('#saleTitle').text('Editar Venda');
+      var uri = `http://localhost:3000/sale/${idUrl}`; 
+      fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
+      .then(response => response.text())
+      .then(result => {
+        var resp = JSON.parse(result); 
+        $('#user').val(resp.user);
+        $('#date').val(resp.date);
+        $('#products').val(resp.products);
+      })
+      .catch(error => console.log('error', error));
     }
-});
-
-function validaForm(data){
-    if(!data.product || !data.quantidade){
-        return false;
-    }
-    else{
-        return true;
-    }
-}
-
-$( "#cancelar" ).click(function() {
-    $("#table-sale tbody").remove(); 
-    $('#produto').val('');
-    $('#quantidade').val('');
-    array = [];
-})
-
-function addTabela(array){
-    $("#table-sale tbody").remove(); 
-    var table = $('table');
-    var tbody = $('<tbody>');
-
-    array.forEach(data => {
-        var tr = $('<tr>');
-        tr.append('<td>' + data.product + '</td>');
-        tr.append('<td>' + data.quantidade + '</td>');
-        tbody.append(tr);
-    });
-    table.append(tbody);  
-}
-
-function postSale() {
+  });
+  
+  function postSale() {
     var uri = `http://localhost:3000/sale/`;
-    if(array.length !== 0){
-        var usuario = sessionStorage.getItem('id');
-        var data = JSON.stringify({
-          "user": usuario,
-          "date": (new Date()).toJSON(),
-          "products": array
+    var user = $('#user').val();
+    var date = $('#date').val();
+    var products = $('#products').val();
+    var data = JSON.stringify({
+      "user": user,
+      "date": date,
+      "products": products
+    });
+    var req = new XMLHttpRequest();
+    req.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+        new Promise(() =>{
+          $('#modal-comp').modal('show');
         });
-    
-        var req = new XMLHttpRequest();
-        req.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
-            new Promise(() =>{
-              $('#modal-comp').modal('show');
-            });
-          }
-        });
-    
-        req.open('POST',uri,false);
-        req.setRequestHeader("Content-Type", "application/json"); 
-        req.setRequestHeader('Access-Control-Allow-Origin', '*');
-        req.setRequestHeader('Accept', '*/*');    
-        req.send(data);
-    }    
-  }    
+      }
+    });
+    var idUrl = getUrlParameter('id');
+    if(idUrl){
+      req.open('PUT',uri + idUrl,false);
+      req.setRequestHeader("Content-Type", "application/json"); 
+      req.setRequestHeader('Access-Control-Allow-Origin', '*');
+      req.setRequestHeader('Accept', '*/*');    
+      req.send(data);
+    }else{
+      req.open('POST',uri,false);
+      req.setRequestHeader("Content-Type", "application/json"); 
+      req.setRequestHeader('Access-Control-Allow-Origin', '*');
+      req.setRequestHeader('Accept', '*/*');    
+      req.send(data);
+    }
+  }
+  
+  $('#modal-comp').on('hidden.bs.modal',function() {  
+    window.location.reload();
+  });
+  
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+  
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+      }
+    }
+  };
