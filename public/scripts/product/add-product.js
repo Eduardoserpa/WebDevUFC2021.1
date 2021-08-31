@@ -21,6 +21,7 @@ $(document).ready(function(){
 //   const data = new FormData();
 //   data.append('image', file);
 
+//   console.log($('#file')[0]);
 //   var req = new XMLHttpRequest();
 //   req.addEventListener("readystatechange", function() {
 //   if(this.readyState === 4) {
@@ -43,33 +44,37 @@ function postProduct() {
   var categoria = $('#categoria').val();
   var valor = $('#valor').val();
   var quantidade = $('#quantidade').val();
-  var data = JSON.stringify({
-    "nome": nome,
-    "categoria": categoria,
-    "valor": parseInt(valor),
-    "estoque": parseInt(quantidade)
-  });
+  var file = $('#file')[0].files[0];
+  var formdata = new FormData();
+  formdata.append("nome", nome);
+  formdata.append("categoria", categoria);
+  formdata.append("valor", parseInt(valor));
+  formdata.append("estoque", parseInt(quantidade));
+  formdata.append("productImage", file, file.name);
+
+
   var req = new XMLHttpRequest();
   req.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
       new Promise(() =>{
-        $('#modal-comp').modal('show');
+        if(req.status === 200 || req.status === 201){
+          $('#modal-comp').modal('show');
+        }
       });
     }
   });
   var idUrl = getUrlParameter('id');
   if(idUrl){
-    req.open('PUT',uri + idUrl,false);
+    req.open('PUT',uri + idUrl,true);
     req.setRequestHeader("Content-Type", "application/json"); 
     req.setRequestHeader('Access-Control-Allow-Origin', '*');
     req.setRequestHeader('Accept', '*/*');    
     req.send(data);
   }else{
-    req.open('POST',uri,false);
-    req.setRequestHeader("Content-Type", "application/json"); 
+    req.open('POST',uri,true);
     req.setRequestHeader('Access-Control-Allow-Origin', '*');
     req.setRequestHeader('Accept', '*/*');    
-    req.send(data);
+    req.send(formdata);
   }
 };
 

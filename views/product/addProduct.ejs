@@ -105,11 +105,25 @@
                                 <div class="col-5">
                                     <div>
                                         <div class="row foto-label">
-                                            <label class="form-label">Foto do Produto</label>
+                                            <label for="nome">Foto do Produto</label>
                                         </div>
-                                        <form action="/" method="post" enctype="multipart/form-data">
-                                            <input type="file" name="photos" id='file'>
+                                        <form class="mt-4"
+                                            method="POST"
+                                            enctype="multipart/form-data"
+                                        >
+                                            <div class="form-group">
+                                            <input
+                                                type="file"
+                                                name="file"
+                                                id="file"
+                                                class="form-control-file border"
+                                            />
+                                            </div>
+                                            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                                         </form>
+                                        <!-- <form action="/" method="post" enctype="multipart/form-data">
+                                            <input type="file" name="photos" id='file'>
+                                        </form> -->
                                         <!-- <div class="row">  
                                             <img src="../../imagens/vendas/image 21.png" width="325" height="239" alt=""/>
                                             <br />
