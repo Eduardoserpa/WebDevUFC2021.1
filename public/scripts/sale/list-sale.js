@@ -1,18 +1,30 @@
 let NumeroLinhasPorPagina = 6;
 let IndexPagina = 1;
 
-$(document).ready(() => getSales());
+$(document).ready(() => getSales(`http://localhost:3000/sale/${NumeroLinhasPorPagina}/${IndexPagina}`));
 $("#PreviousPage").click(function() {
     IndexPagina --;
-    getSales();
+    var uri = `http://localhost:3000/sale/${NumeroLinhasPorPagina}/${IndexPagina}`;
+    getSales(uri);
 });
 $("#NextPage").click(function() {
     IndexPagina ++;
-    getSales();
+    var uri = `http://localhost:3000/sale/${NumeroLinhasPorPagina}/${IndexPagina}`;
+    getSales(uri);
 });
 
-function getSales(){
-    var uri = `http://localhost:3000/sale/${NumeroLinhasPorPagina}/${IndexPagina}`;  
+$("#consultar-btn").click(function() {
+    var produto = $('#produto').val();
+    var vendedor = $('#vendedor').val();
+    var uri = `http://localhost:3000/sale/`;
+
+    if(produto) uri += `?produto=${produto.split(" ")[2]}`;
+    if(categoria) uri += `?categoria=${vendedor}`;
+
+    getSales(uri);
+});
+
+function getSales(uri){
     fetch(uri, {method: 'GET', mode: 'cors', redirect: 'follow'})
     .then(response => response.text())
     .then(result => {
@@ -59,6 +71,7 @@ function excluirVenda(){
     $('#myModal').modal('show');
 }
 
+
 function deleteVenda() {
     var id = sessionStorage.getItem('id-delete');
     console.log('session ' + id);
@@ -81,7 +94,6 @@ function deleteVenda() {
 $('#modal-comp').on('hidden.bs.modal', function () {
     window.location.reload();
 });
-
 
 function criarTabela(data){
     var container = $('#my-container'),
