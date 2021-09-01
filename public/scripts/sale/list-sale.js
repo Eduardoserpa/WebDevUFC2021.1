@@ -58,19 +58,21 @@ function criarPagination(pageIndex, pageCount, hasPreviousPage, hasNextPage){
     pagination.append(linha);
 }
 
-function editarSale(){
+function editarVenda(){
     var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
     sessionStorage.setItem('id-editar',id);
     window.location.replace('/addSale?id=' + id);
 }
 
-function excluirSale(){
+function excluirVenda(){
     var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
+    console.log(id);
     sessionStorage.setItem('id-delete',id);
     $('#myModal').modal('show');
 }
 
-function deleteSale() {
+
+function deleteVenda() {
     var id = sessionStorage.getItem('id-delete');
     console.log('session ' + id);
     var uri = `http://localhost:3000/sale/` + id;
@@ -96,13 +98,12 @@ $('#modal-comp').on('hidden.bs.modal', function () {
 function criarTabela(data){
     var container = $('#my-container'),
     table = $('<table>').addClass('table').attr('id', 'list-sale');
-
     var thead = $('<thead>');
     var tr_head = $('<tr>');
-    tr_head.append('<th>' + 'Data' + '</th>');
     tr_head.append('<th>' + 'Cód Venda' + '</th>');
     tr_head.append('<th>' + 'Vendedor' + '</th>');
     tr_head.append('<th>' + 'Valor da Venda' + '</th>');
+    tr_head.append('<th>' + 'Data' + '</th>');
     tr_head.append('<th>' + 'Ações' + '</th>');
     thead.append(tr_head);
     table.append(thead);
@@ -113,13 +114,11 @@ function criarTabela(data){
         var tr = $('<tr>');
         var valorVenda = 0;
         user.products.forEach((produto) => {
-            console.log(produto)
             if(produto.product){
                 valorVenda += produto.product.valor * produto.quantidade;
             }
         });
-
-        [ 'date', '_id', 'user', 'valor'].forEach(function(attr) {
+        [ '_id', 'user', 'valor', 'date' ].forEach(function(attr) {
             var date = new Date(user['date']);
             var value = attr === 'date' ? dataAtualFormatada(date) : user[attr];
             
@@ -129,12 +128,9 @@ function criarTabela(data){
             tr.append('<td>' + value + '</td>');
         });
         tr.append(
-            '<td>' +      
-            '<button type="submit" class="btn btn-light btn-lg btn-table">' +
-            '<a rel="lightbox" title="Imagem 6"><img src="../../imagens/icones/list-solid.svg" width="15" height="15" alt="" title="Detalhes"/></a>'+ 
-            '</button>' +   
-                '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirProduto()">Excluir</button>' +
-                '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarProduto()">Editar</button>' +
+            '<td>' +
+                '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirVenda()">Excluir</button>' +
+                // '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarVenda()">Editar</button>' +
             '</td>'
         );     
         tbody.append(tr);

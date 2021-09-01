@@ -130,6 +130,28 @@
                 </div>
             </div>
         </div>
+        <%- include('../components/modal.ejs', {title:'Venda', body: 'Venda excluída com sucesso'}); %> 
+        <!-- Modal -->
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label id="loginHelp" class="form-text text-muted">
+                            Deseja realmente excluir a venda?
+                        </label>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="deleteVenda()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 <%- contentFor('secao3') %>
 <script type="text/javascript" src='scripts/sale/list-sale.js'></script>
