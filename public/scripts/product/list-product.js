@@ -16,11 +16,12 @@ $("#NextPage").click(function() {
 $("#consultar-btn").click(function() {
     var produto = $('#produto').val();
     var categoria = $('#categoria').val();
+
     var uri = `http://localhost:3000/product/`;
 
     if(produto) uri += `?produto=${produto.split(" ")[2]}`;
     if(categoria) uri += `?categoria=${categoria}`;
-
+    
     getProducts(uri);
 });
 

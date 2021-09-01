@@ -7,6 +7,7 @@ $(document).ready(function(){
       .then(response => response.text())
       .then(result => {
         var resp = JSON.parse(result); 
+        console.log(resp);
         $('#user').val(resp.user);
         $('#date').val(resp.date);
         $('#products').val(resp.products);
