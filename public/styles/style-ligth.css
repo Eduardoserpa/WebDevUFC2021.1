@@ -831,3 +831,7 @@ li {
   .gallery__next {
     left: 100%;
   }
+
+  .bg-1 {
+    background-image: url(http://localhost:3000/uploads/salto-alto-fem.jpg);
+  }

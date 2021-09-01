@@ -31,13 +31,12 @@ function putProduct() {
     });
     var req = new XMLHttpRequest();
     req.addEventListener("readystatechange", function() {
-    if(this.readyState === 4) {
-        console.log(this.responseText);
-        new Promise(() =>{
-            console.log('promise');
-            var modal = $('#modal-comp');
-            modal.modal('show');
-        });    }
+        if(this.readyState === 4) {
+            new Promise(() =>{
+                var modal = $('#modal-comp');
+                modal.modal('show');
+            });    
+        }
     });
     req.open("PUT",uri,false);
     req.setRequestHeader("Content-Type", "application/json"); 
@@ -55,9 +54,7 @@ function deleteProduct() {
     var req = new XMLHttpRequest();
     req.addEventListener("readystatechange", function() {
     if(this.readyState === 4) {
-        console.log(this.responseText);
         new Promise(() =>{
-            console.log('promise');
             var modal = $('#modal-comp');
             modal.modal('show');
         });    }
@@ -66,5 +63,4 @@ function deleteProduct() {
     req.setRequestHeader("Content-Type", "application/json");
     req.setRequestHeader('Access-Control-Allow-Origin', '*');
     req.setRequestHeader('Accept', '*/*');
-    /*req.send(data);*/
 }

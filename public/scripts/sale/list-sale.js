@@ -14,13 +14,9 @@ $("#NextPage").click(function() {
 });
 
 $("#consultar-btn").click(function() {
-    var produto = $('#produto').val();
     var vendedor = $('#vendedor').val();
     var uri = `http://localhost:3000/sale/`;
-
-    if(produto) uri += `?produto=${produto.split(" ")[2]}`;
-    if(categoria) uri += `?categoria=${vendedor}`;
-
+    if(vendedor) uri += `?user=${vendedor}`;
     getSales(uri);
 });
 
@@ -58,25 +54,15 @@ function criarPagination(pageIndex, pageCount, hasPreviousPage, hasNextPage){
     pagination.append(linha);
 }
 
-function editarVenda(){
-    var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
-    sessionStorage.setItem('id-editar',id);
-    window.location.replace('/addSale?id=' + id);
-}
-
 function excluirVenda(){
     var id =  event.target.parentNode.parentNode.childNodes[0].innerText;
-    console.log(id);
     sessionStorage.setItem('id-delete',id);
     $('#myModal').modal('show');
 }
 
-
 function deleteVenda() {
     var id = sessionStorage.getItem('id-delete');
-    console.log('session ' + id);
     var uri = `http://localhost:3000/sale/` + id;
-
     var req = new XMLHttpRequest();
     req.addEventListener("readystatechange", function() {
         if(this.readyState === 4) {
@@ -130,7 +116,6 @@ function criarTabela(data){
         tr.append(
             '<td>' +
                 '<button type="submit" class="btn btn-primary btn-lg btn-table" onClick="excluirVenda()">Excluir</button>' +
-                // '<button type="submit" class="btn btn-warning btn-lg btn-table" onClick="editarVenda()">Editar</button>' +
             '</td>'
         );     
         tbody.append(tr);

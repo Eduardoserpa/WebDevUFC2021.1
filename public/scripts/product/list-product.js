@@ -71,7 +71,6 @@ function excluirProduto(){
 
 function deleteProduct() {
     var id = sessionStorage.getItem('id-delete');
-    console.log('session ' + id);
     var uri = `http://localhost:3000/product/` + id;
 
     var req = new XMLHttpRequest();

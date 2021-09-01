@@ -15,13 +15,12 @@ function putSale() {
     });
     var req = new XMLHttpRequest();
     req.addEventListener("readystatechange", function() {
-    if(this.readyState === 4) {
-        console.log(this.responseText);
-        new Promise(() =>{
-            console.log('promise');
-            var modal = $('#modal-comp');
-            modal.modal('show');
-        });    }
+        if(this.readyState === 4) {
+            new Promise(() =>{
+                var modal = $('#modal-comp');
+                modal.modal('show');
+            });    
+        }
     });
     req.open("PUT",uri,false);
     req.setRequestHeader("Content-Type", "application/json"); 
@@ -34,21 +33,17 @@ function deleteSale() {
     var uri = `http://localhost:3000/sale/`;
     var id = $('#_id').val();
     uri.append(id);
-    window.alert(uri);
-
     var req = new XMLHttpRequest();
     req.addEventListener("readystatechange", function() {
-    if(this.readyState === 4) {
-        console.log(this.responseText);
-        new Promise(() =>{
-            console.log('promise');
-            var modal = $('#modal-comp');
-            modal.modal('show');
-        });    }
+        if(this.readyState === 4) {
+            new Promise(() =>{
+                var modal = $('#modal-comp');
+                modal.modal('show');
+            });    
+        }
     });
     req.open("DELETE",uri,false);
     req.setRequestHeader("Content-Type", "application/json");
     req.setRequestHeader('Access-Control-Allow-Origin', '*');
     req.setRequestHeader('Accept', '*/*');
-    /*req.send(data);*/
 }

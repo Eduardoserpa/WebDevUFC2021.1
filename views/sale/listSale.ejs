@@ -74,39 +74,16 @@
                     <label>As vendas relacionadas representam todas as vendas realizadas no sistema</label>       
                 </div>
                 <div class="container-filtro">
-                    <form>
+                    <form id='vendas-form' onsubmit="return false">
                         <div class="row form-group">
-
                             <div class="item-group">
                                 <div class="row">
-                                    <div class="col-5">
-                                        <label for="produto">Produto</label>
-                                        <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o código ou o nome do produto">                                
-                                    </div>
-                                    <div class="col-1"></div>
                                     <div class="col-5">
                                         <label for="vendedor">Vendedor</label>
-                                        <input type="text" class="form-control" id="vendedor" name="vendedor" placeholder="Digite o código ou o nome do vendedor">
+                                        <input type="text" class="form-control" id="vendedor" name="vendedor" placeholder="Digite o código do vendedor">
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-group">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <label for="venda">Código da venda</label>
-                                        <input type="text" class="form-control" id="venda" name="venda" placeholder="Digite o código da venda">
-                                    </div>
-                                    <div class="col-1"></div>
-                                    <div class="col-6">
-                                        <label for="data-inicio">Data (Período)</label><br/>
-                                        <div>
-                                            <label>De </label> <input type="date" id="data-inicio" name="data-inicio" class="datetime">
-                                            <label> Até </label> <input type="date" id="data-Fim" name="data-fim" class="datetime">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="row form-btn">
                             <button type="submit" class="btn btn-secondary btn-lg" id="consultar-btn">

@@ -2,7 +2,6 @@ codigo = "";
 
 function getProduct() {
     var codigo = $('#produto').val();
-    console.log(codigo);
     if(codigo){
         var uri = `http://localhost:3000/product/${codigo}`;
         var requestOptions = {

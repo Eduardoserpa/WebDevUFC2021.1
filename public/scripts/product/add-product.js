@@ -8,7 +8,6 @@ $(document).ready(function(){
     .then(response => response.text())
     .then(result => {
       var resp = JSON.parse(result); 
-      console.log(resp);
       $('#nome').val(resp.nome);
       $('#categoria').val(resp.categoria);
       $('#valor').val(resp.valor);
@@ -109,7 +108,6 @@ function readImage() {
 }
 $("#file").change(function (){
   if (this.files && this.files[0]) {
-    console.log('teste img');
     var file = new FileReader();
     file.onload = function(e) {
         document.getElementById("preview").src = e.target.result;
